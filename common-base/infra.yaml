@@ -15,3 +15,7 @@ spec:
     path: common-base/openshift-machine-api/
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: ocp4
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
