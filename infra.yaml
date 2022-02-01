@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: infraMachines
+    chart: openshift-machines-api
     directory:
       recurse: true
     path: common-base/openshift-machine-api/
