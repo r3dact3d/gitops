@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: acm-operator
-  namespace: open-cluster-management
+  namespace: openshift-operators
 spec:
   destination:
     namespace: default
