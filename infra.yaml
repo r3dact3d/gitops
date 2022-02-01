@@ -14,7 +14,7 @@ spec:
       recurse: true
     path: common-base/openshift-machine-api/
     repoURL: https://github.com/r3dact3d/gitops
-    targetRevision: ocp4
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
