@@ -12,9 +12,12 @@ spec:
   source:
     directory:
       recurse: true
-    path: common-base/openshift-machine-api/
+    path: common-base/openshift-machine-api
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ../blinker19/values.yaml
   syncPolicy:
     automated:
       prune: true
