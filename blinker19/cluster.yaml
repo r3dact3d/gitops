@@ -12,10 +12,10 @@ spec:
   source:
     repoURL: 'https://github.com/r3dact3d/gitops'
     path: common-base
-      targetRevision: HEAD
-      helm:
-        valueFiles:
-          - values.yaml
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
     directory:
       recurse: true
   syncPolicy:
