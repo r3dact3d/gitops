@@ -14,11 +14,8 @@ spec:
     path: common-base
       targetRevision: main
       helm:
-        parameters:
-          - name: infraID
-            value: INFRA_ID
-          - name: region
-            value: AWS_REGION
+        valueFiles:
+          - values.yaml
     directory:
       recurse: true
   syncPolicy:
