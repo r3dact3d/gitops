@@ -1,26 +1,27 @@
 ---
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
-  name: blinker19-gitops
+  name: infra-machines-appset
   namespace: openshift-gitops
 spec:
-  destination:
-    namespace: openshift-gitops
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    repoURL: 'https://github.com/r3dact3d/gitops'
-    path: common-base
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - ../../blinker19/values.yaml
-    directory:
-      recurse: true
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - CreateNamespace=true
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: 'openshift-machines-api'
+    spec:
+      destination:
+        namespace: openshift-gitops
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        helm:
+          valueFiles:
+            - '../../blinker19/values.yaml'
+        repoURL: 'https://github.com/r3dact3d/gitops'
+        path: common-base/openshift-machines-api
+        targetRevision: HEAD
