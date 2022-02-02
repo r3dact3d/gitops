@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: infra-machineset-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: '{{name}}-openshift-machines-api'
+    spec:
+      destination:
+        namespace: openshift-machine-api
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        helm:
+          valueFiles:
+            - '../../{{name}}/values.yaml'
+        repoURL: 'https://github.com/r3dact3d/gitops'
+        path: common-base/openshift-machines-api
+        targetRevision: HEAD
