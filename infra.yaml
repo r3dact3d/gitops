@@ -13,11 +13,8 @@ spec:
     chart: openshift-machines-api
     directory:
       recurse: true
-    path: common-base/openshift-machine-api/
-    repoURL: https://github.com/r3dact3d/gitops
+    repoURL: https://github.com/r3dact3d/gitops/common-base/openshift-machine-api
     targetRevision: 0.0.1
-    helm:
-      releaseName: helm-deploy
   syncPolicy:
     automated:
       prune: true
