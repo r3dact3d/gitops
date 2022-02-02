@@ -15,7 +15,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - gitops-tasks/blinker19/values.yaml
+        - values.yaml
   syncPolicy:
     automated:
       prune: true
