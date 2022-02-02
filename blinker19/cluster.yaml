@@ -6,9 +6,9 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: default
+    namespace: openshift-machine-api
     server: https://kubernetes.default.svc
-  project: openshift-machine-api
+  project: default
   source:
     directory:
       recurse: true
@@ -17,7 +17,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - ../blinker19/values.yaml
+        - ../../blinker19/values.yaml
   syncPolicy:
     automated:
       prune: true
