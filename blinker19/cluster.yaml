@@ -10,8 +10,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      recurse: true
     path: common-base/openshift-machine-api
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
