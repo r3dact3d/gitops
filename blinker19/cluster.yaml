@@ -2,11 +2,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-machineset
+  name: blinker19-gitops
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: openshift-machines-api
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: default
   source:
@@ -15,7 +15,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - values.yaml
+        - ../../blinker19/values.yaml
     directory:
       recurse: true
   syncPolicy:
