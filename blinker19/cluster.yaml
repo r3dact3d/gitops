@@ -12,10 +12,13 @@ spec:
   source:
     repoURL: 'https://github.com/r3dact3d/gitops'
     path: common-base
-      targetRevision: HEAD
+      targetRevision: main
       helm:
-        valueFiles:
-          - values.yaml
+        parameters:
+          - name: infraID
+            value: INFRA_ID
+          - name: region
+            value: AWS_REGION
     directory:
       recurse: true
   syncPolicy:
