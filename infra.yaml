@@ -2,20 +2,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-deploy
+  name: Infra-MachineSet
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: default
+    namespace: openshift-machines-api
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: openshift-machines-api
+    repoURL: 'https://github.com/r3dact3d/gitops'
+    path: common-base/openshift-machine-api
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+          - values.yaml
     directory:
       recurse: true
-    repoURL: https://github.com/r3dact3d/gitops/common-base/openshift-machine-api
-    targetRevision: 0.0.1
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
