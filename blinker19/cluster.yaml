@@ -15,7 +15,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - ../../blinker19/values.yaml
+        - values.yaml
   syncPolicy:
     automated:
       prune: true
