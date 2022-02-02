@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: infra-machines-appset
+  name: gitops-appsets
   namespace: openshift-gitops
 spec:
   generators:
@@ -12,7 +12,7 @@ spec:
             argocd.argoproj.io/secret-type: cluster
   template:
     metadata:
-      name: 'openshift-machines-api'
+      name: 'gitops-appsets'
     spec:
       destination:
         namespace: openshift-gitops
@@ -23,5 +23,5 @@ spec:
           valueFiles:
             - '../../blinker19/values.yaml'
         repoURL: 'https://github.com/r3dact3d/gitops'
-        path: common-base/openshift-machines-api
+        path: common-base/gitops-appsets
         targetRevision: HEAD
