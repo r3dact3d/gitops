@@ -1,3 +1,0 @@
-apiVersion: v1
-name: openshift-machine-api
-version: 0.0.1

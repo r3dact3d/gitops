@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/r3dact3d/gitops'
-    path: common-base/openshift-machine-api
+    path: common-base
       targetRevision: HEAD
       helm:
         valueFiles:
