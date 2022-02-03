@@ -1,4 +1,3 @@
----
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfigPool
 metadata:
@@ -6,7 +5,7 @@ metadata:
 spec:
   machineConfigSelector:
     matchExpressions:
-      - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker,infra]}
+      - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker,infra]} 
   nodeSelector:
     matchLabels:
-      'node-role.kubernetes.io/infra: ""'
+      node-role.kubernetes.io/infra: "" 
