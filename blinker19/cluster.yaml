@@ -20,3 +20,26 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-monitoring-configmap
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-monitoring
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: common-base/openshift-monitoring
+    repoURL: https://github.com/r3dact3d/gitops
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ../../blinker19/values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
