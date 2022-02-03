@@ -6,7 +6,7 @@ kind: MachineConfigPool
 metadata:
   name: infra
 spec:
-  machineConfSelector:
+  machineConfigSelector:
     matchExpressions:
       - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker,infra]}
   nodeSelector:
