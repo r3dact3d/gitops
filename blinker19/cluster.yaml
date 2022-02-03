@@ -43,3 +43,28 @@ spec:
     automated:
       prune: true
       selfHeal: true
+      
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: acm-operator
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: open-cluster-management
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: acm_build1/open-cluster-management
+    repoURL: https://github.com/r3dact3d/gitops
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ../../blinker19/values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
