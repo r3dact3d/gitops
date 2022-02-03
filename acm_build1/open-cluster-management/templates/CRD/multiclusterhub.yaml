@@ -6,6 +6,12 @@ metadata:
   name: multiclusterhub
   namespace: open-cluster-management
 spec:
+  nodeSelector:
+    node-role.kubernetes.io/infra: ""
+  tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/infra
+    operator: Exists
   availabilityConfig: High
   enableClusterBackup: false
   ingress:
