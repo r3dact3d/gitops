@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-machinesets-1
+  name: infra-node-selector
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: openshift-machine-api
+    namespace: openshift-ingress-operator
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: common-base/openshift-machine-api
+    path: common-base/openshift-ingress-operator
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
     helm:
