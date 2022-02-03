@@ -4,4 +4,4 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: all-openshift-clusters
-  spec: {}
+spec: {}
