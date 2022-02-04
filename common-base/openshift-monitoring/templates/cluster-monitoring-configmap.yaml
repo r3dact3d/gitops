@@ -11,7 +11,7 @@ data:
       tolerations:
       - effect: NoSchedule 
         key: node-role.kubernetes.io/infra 
-    operator: Exists 
+        operator: Exists 
     prometheusK8s:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
