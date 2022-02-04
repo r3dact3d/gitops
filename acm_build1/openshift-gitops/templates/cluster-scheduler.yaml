@@ -4,6 +4,7 @@ kind: Scheduler
 metadata:
   name: cluster
 spec:
+  defaultNodeSelector: node-role.kubernetes.io/worker=
   mastersSchedulable: false
   policy:
     name: ''
