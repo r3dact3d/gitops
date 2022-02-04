@@ -4,13 +4,12 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: cluster
-spec: {}
-#spec:
-#  runOnInfra: true
-#  tolerations:
-#  - effect: NoSchedule
-#    key: infra
-#    value: reserved
-#  - effect: NoExecute
-#    key: infra
-#    value: reserved
+spec:
+  runOnInfra: true
+  tolerations:
+  - effect: NoSchedule
+    key: infra
+    value: reserved
+  - effect: NoExecute
+    key: infra
+    value: reserved
