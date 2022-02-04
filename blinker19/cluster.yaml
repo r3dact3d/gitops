@@ -43,6 +43,53 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-helpers
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: common-base/openshift-gitops
+    repoURL: https://github.com/r3dact3d/gitops
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ../../blinker19/values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-config
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-config
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: common-base/openshift-config
+    repoURL: https://github.com/r3dact3d/gitops
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ../../blinker19/values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
       
 #---
 #apiVersion: argoproj.io/v1alpha1
@@ -69,25 +116,3 @@ spec:
 #    syncOptions:
 #      - CreateNamespace=true
       
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: gitops-helpers
-  namespace: openshift-gitops
-spec:
-  destination:
-    namespace: openshift-gitops
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: acm_build1/openshift-gitops
-    repoURL: https://github.com/r3dact3d/gitops
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - ../../blinker19/values.yaml
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
