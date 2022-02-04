@@ -10,8 +10,8 @@ spec:
     node-role.kubernetes.io/infra: ""
   tolerations:
   - effect: NoSchedule
-    key: node-role.kubernetes.io/infra
-    operator: Exists
+    key: infra
+    value: reserved
   availabilityConfig: High
   enableClusterBackup: false
   ingress:
