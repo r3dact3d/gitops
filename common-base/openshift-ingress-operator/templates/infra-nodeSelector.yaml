@@ -9,8 +9,9 @@ spec:
       matchLabels:
         node-role.kubernetes.io/infra: ""
     tolerations:
-    - effect: NoSchedule
-      operator: Exists
+    - key: infra
+      value: reserved
+      effect: NoSchedule
   clientTLS:
     clientCA:
       name: ''
