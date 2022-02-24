@@ -13,12 +13,12 @@ spec:
   isCA: false
   subject:
     organizations:
-      - blinker19
+      - blinker
   usages:
     - server auth
     - client auth
   dnsNames:
-  - api.blinker19.sandbox139.opentlc.com
+  - api.{{ .Values.name }}.{{ .Values.wildcardDomain }}
   issuerRef:
     name: selfsigned-issuer
     kind: ClusterIssuer
