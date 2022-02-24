@@ -2,6 +2,8 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: selfsigned-wildcard-cert
   namespace: openshift-ingress
 spec:
@@ -18,7 +20,7 @@ spec:
     - server auth
     - client auth
   dnsNames:
-  - .apps.{{ .Values.baseDomain }}
+  - .apps.{{ .Values.wildcardDomain }}
   issuerRef:
     name: selfsigned-issuer
     kind: ClusterIssuer
