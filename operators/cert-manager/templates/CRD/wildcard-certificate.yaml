@@ -13,7 +13,7 @@ spec:
   isCA: false
   subject:
     organizations:
-      - jetstack
+      - blinker
   usages:
     - server auth
     - client auth
