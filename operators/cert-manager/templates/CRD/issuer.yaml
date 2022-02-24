@@ -1,9 +1,8 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-    annotations:
+  annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: selfsigned-issuer
-  namespace: openshift-operators
 spec:
   selfSigned: {}
