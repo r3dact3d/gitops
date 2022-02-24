@@ -3,7 +3,7 @@ kind: Issuer
 metadata:
     annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-  name: test-selfsigned
+  name: selfsigned-issuer
   namespace: openshift-operators
 spec:
   selfSigned: {}
