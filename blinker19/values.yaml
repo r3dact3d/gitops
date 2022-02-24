@@ -1,2 +1,3 @@
 infraID: something_blinker
+wildcardDomain: baseDomain
 region: us-east-2
