@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: operators/cert-manager
+    path: common-base/cert-manager
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
     helm:
@@ -25,11 +25,13 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
   name: openshift-certificates
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: openshift-operators
+    namespace: openshift-config
     server: https://kubernetes.default.svc
   project: default
   source:
