@@ -13,9 +13,6 @@ spec:
   organization:
   - jetstack
   isCA: false
-  keySize: 2048
-  keyAlgorithm: rsa
-  keyEncoding: pkcs1
   usages:
     - server auth
     - client auth
