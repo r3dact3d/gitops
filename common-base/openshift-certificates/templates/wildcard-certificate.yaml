@@ -8,8 +8,8 @@ metadata:
   namespace: openshift-ingress
 spec:
   secretName: selfsigned-wildcard-cert
-  duration: 24h
-  renewBefore: 23h
+  duration: 24h0m0s
+  renewBefore: 23h30m0s
   isCA: false
   subject:
     organizations:
