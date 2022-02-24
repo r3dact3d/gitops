@@ -1,3 +1,4 @@
 infraID: something_blinker
-wildcardDomain: BASE_DOMAIN
+name: blinker19
+wildcardDomain: sandbox139.opentlc.com
 region: us-east-2
