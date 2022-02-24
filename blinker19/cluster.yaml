@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-node-selector
+  name: ingress-controller
   namespace: openshift-gitops
 spec:
   destination:
