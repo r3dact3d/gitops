@@ -7,5 +7,4 @@ spec:
   #httpProxy:
   #httpsProxy:
   #noProxy:
-  trustedCA:
-    name: custom-ca
+  trustedCA: {}
