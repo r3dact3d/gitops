@@ -10,9 +10,10 @@ spec:
   secretName: selfsigned-wildcard-cert
   duration: 24h
   renewBefore: 23h
-  organization:
-  - jetstack
   isCA: false
+  subject:
+    organizations:
+      - jetstack
   usages:
     - server auth
     - client auth
