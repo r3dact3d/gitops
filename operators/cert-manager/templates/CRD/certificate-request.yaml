@@ -1,5 +1,5 @@
 ---
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   annotations:
@@ -8,8 +8,8 @@ metadata:
   namespace: openshift-ingress
 spec:
   secretName: selfsigned-wildcard-cert
-  duration: 2160h # 90d
-  renewBefore: 360h # 15d
+  duration: 24h
+  renewBefore: 23h
   organization:
   - jetstack
   isCA: false
@@ -24,4 +24,4 @@ spec:
   issuerRef:
     name: selfsigned-issuer
     kind: ClusterIssuer
-    group: cert-manager.io
+
