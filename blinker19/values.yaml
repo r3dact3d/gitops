@@ -1,4 +1,2 @@
-infraID: something_blinker
-name: blinker19
-wildcardDomain: sandbox139.opentlc.com
-region: us-east-2
+name: OCP_CLUSTER_NAME
+baseDomain: OCP_BASE_DOMAIN
