@@ -17,7 +17,7 @@ spec:
     - server auth
     - client auth
   dnsNames:
-  - .apps.{{ .Values.name }}.{{ .Values.wildcardDomain }}
+  - .apps.{{ .Values.name }}.{{ .Values.baseDomain }}
   issuerRef:
     name: selfsigned-issuer
     kind: ClusterIssuer
