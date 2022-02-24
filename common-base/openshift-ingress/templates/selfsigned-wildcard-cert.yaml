@@ -1,0 +1,10 @@
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: selfsigned-wildcard-cert
+  namespace: openshift-ingress
+data:
+  tls.cert: {{ .Values.wildcardTlsCrt }}
+  tls.key: {{ .Values.wildcardTlsKey }}
+type: kubernetes.io/tls
