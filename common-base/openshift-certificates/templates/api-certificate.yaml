@@ -10,7 +10,6 @@ spec:
   secretName: selfsigned-api-cert
   duration: 24h0m0s
   renewBefore: 23h30m0s
-  isCA: false
   subject:
     organizations:
       - blinker
