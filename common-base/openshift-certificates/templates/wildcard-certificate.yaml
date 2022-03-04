@@ -9,7 +9,7 @@ metadata:
 spec:
   secretName: selfsigned-wildcard-cert
   duration: 24h0m0s
-  renewBefore: 23h30m0s
+  renewBefore: 1h30m0s
   subject:
     organizations:
       - blinker
