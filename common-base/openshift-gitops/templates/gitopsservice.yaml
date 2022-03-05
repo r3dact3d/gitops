@@ -10,6 +10,3 @@ spec:
   - effect: NoSchedule
     key: infra
     value: reserved
-  - effect: NoExecute
-    key: infra
-    value: reserved
