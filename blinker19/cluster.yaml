@@ -90,7 +90,30 @@ spec:
       prune: true
       selfHeal: true
       
-
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+  name: openshift-certificates
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-config
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: common-base/openshift-certificates
+    repoURL: https://github.com/r3dact3d/gitops
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ../../blinker19/values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 
 
       
