@@ -12,9 +12,7 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
+        
     prometheusK8s:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
@@ -22,9 +20,6 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
 
     prometheusOperator:
       nodeSelector:
@@ -33,9 +28,6 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
 
     grafana:
       nodeSelector:
@@ -44,9 +36,6 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
 
     k8sPrometheusAdapter:
       nodeSelector:
@@ -55,9 +44,6 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
 
     kubeStateMetrics:
       nodeSelector:
@@ -66,9 +52,6 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
 
     telemeterClient:
       nodeSelector:
@@ -77,9 +60,6 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
 
     openshiftStateMetrics:
       nodeSelector:
@@ -88,7 +68,3 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
-      - key: infra
-        value: reserved
-        effect: NoExecute
-
