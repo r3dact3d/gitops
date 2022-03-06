@@ -19,7 +19,7 @@ spec:
   source:
     check_cycle: 1440
     create_source: true
-    name: demo_source
+    name: blinker19_source
     #name: {{ .Values.sourceName }}
     sources_path: /api/sources/v1.0/
   upload:
