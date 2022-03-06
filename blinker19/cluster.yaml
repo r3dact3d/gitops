@@ -102,7 +102,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: common-base/openshift-config
+    path: common-base/cost-management
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
     helm:
