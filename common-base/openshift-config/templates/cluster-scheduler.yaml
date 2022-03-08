@@ -4,6 +4,6 @@ kind: Scheduler
 metadata:
   name: cluster
 spec:
-  mastersSchedulable: false
+  mastersSchedulable: true
   policy:
     name: ''
