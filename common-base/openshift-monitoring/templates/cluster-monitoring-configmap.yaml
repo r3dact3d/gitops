@@ -7,64 +7,64 @@ data:
   config.yaml: |+
     alertmanagerMain:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
         
     prometheusK8s:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
 
     prometheusOperator:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
 
     grafana:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
 
     k8sPrometheusAdapter:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
 
     kubeStateMetrics:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
 
     telemeterClient:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
 
     openshiftStateMetrics:
       nodeSelector:
-        node-role.kubernetes.io/infra: ""
+        node-role.kubernetes.io/perf: ""
       tolerations:
-      - key: infra
+      - key: perf
         value: reserved
         effect: NoSchedule
