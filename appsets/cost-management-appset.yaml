@@ -1,0 +1,28 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cost-management-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters: {}
+  template:
+    metadata:
+      name: '{{name}}-cost-management'
+    spec:
+      destination:
+        namespace: costmanagement-metrics-operator
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        helm:
+          valueFiles:
+            - '../{{name}}/values.yaml'
+        repoURL: 'https://github.com/r3dact3d/gitops'
+        path: common-base/cost-management
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
