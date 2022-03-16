@@ -22,3 +22,7 @@ spec:
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/openshift-config
         targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
