@@ -10,7 +10,7 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            certs: on 
+            certs: "true"
   template:
     metadata:
       name: '{{name}}-cert-manager'
