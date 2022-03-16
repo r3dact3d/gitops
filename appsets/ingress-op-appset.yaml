@@ -6,14 +6,17 @@ metadata:
   namespace: openshift-gitops
 spec:
   generators:
-    - clusters: {}
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
   template:
     metadata:
       name: '{{name}}-ingress-controller'
     spec:
       destination:
         namespace: openshift-ingress-operator
-        server: https://kubernetes.default.svc
+        server: '{{server}}'
       project: default
       source:
         helm:
