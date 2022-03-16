@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: ingress-op-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters: {}
+  template:
+    metadata:
+      name: '{{name}}-ingress-controller'
+    spec:
+      destination:
+        namespace: openshift-ingress-operator
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        helm:
+          valueFiles:
+            - '../{{name}}/values.yaml'
+        repoURL: 'https://github.com/r3dact3d/gitops'
+        path: common-base/openshift-ingress-operator
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
