@@ -21,7 +21,7 @@ spec:
       source:
         helm:
           valueFiles:
-            - '../{{name}}/values.yaml'
+            - '../../{{name}}/values.yaml'
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/cost-management
         targetRevision: HEAD
