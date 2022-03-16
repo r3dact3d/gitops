@@ -9,7 +9,7 @@ spec:
     - clusters:
         selector:
           matchLabels:
-            certs: 'on'
+            certs: on
   template:
     metadata:
       name: '{{name}}-cert-manager'
