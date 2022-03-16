@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-config-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters: {}
+  template:
+    metadata:
+      name: '{{name}}-openshift-config'
+    spec:
+      destination:
+        namespace: openshift-config
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        helm:
+          valueFiles:
+            - '../{{name}}/values.yaml'
+        repoURL: 'https://github.com/r3dact3d/gitops'
+        path: common-base/openshift-config
+        targetRevision: HEAD
