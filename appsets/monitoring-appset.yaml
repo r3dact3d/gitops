@@ -10,14 +10,14 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            env: demo
+            env: infra
   template:
     metadata:
       name: '{{name}}-openshift-monitoring'
     spec:
       destination:
         namespace: openshift-monitoring
-        server: https://kubernetes.default.svc
+        server: '{{server}}'
       project: default
       source:
         path: common-base/openshift-monitoring
