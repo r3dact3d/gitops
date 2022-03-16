@@ -16,7 +16,7 @@ spec:
       name: '{{name}}-cert-manager'
     spec:
       destination:
-        namespace: openshift-gitops
+        namespace: openshift-operators
         server: https://kubernetes.default.svc
       project: default
       source:
