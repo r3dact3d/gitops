@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cert-manager-appset-prod
+  name: cert-manager-appset
   namespace: openshift-gitops
 spec:
   generators:
