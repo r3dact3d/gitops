@@ -10,7 +10,7 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            env: prod
+            env: demo
   template:
     metadata:
       name: '{{name}}-cert-manager'
