@@ -1,0 +1,32 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-monitoring-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+            env: demo
+  template:
+    metadata:
+      name: '{{name}}-openshift-monitoring'
+    spec:
+      destination:
+        namespace: openshift-monitoring
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        path: common-base/openshift-monitoring
+        repoURL: https://github.com/r3dact3d/gitops
+        targetRevision: HEAD
+        helm:
+          valueFiles:
+            - '../{{name}}/values.yaml'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
