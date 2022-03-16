@@ -10,13 +10,14 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
+            env: demo
   template:
     metadata:
       name: '{{name}}-cost-management'
     spec:
       destination:
         namespace: costmanagement-metrics-operator
-        server: https://kubernetes.default.svc
+        server: '{{server}}'
       project: default
       source:
         helm:
