@@ -13,11 +13,11 @@ spec:
             env: infra
   template:
     metadata:
-      name: '{{name}}-openshift-monitoring'
+      name: '{{ .Values.name }}-openshift-monitoring'
     spec:
       destination:
         namespace: openshift-monitoring
-        server: '{{server}}'
+        server: '{{ .Values.server }}'
       project: default
       source:
         path: common-base/openshift-monitoring
@@ -25,7 +25,7 @@ spec:
         targetRevision: HEAD
         helm:
           valueFiles:
-            - '../../{{name}}/values.yaml'
+            - '../../{{ .Values.name }}/values.yaml'
       syncPolicy:
         automated:
           prune: true
