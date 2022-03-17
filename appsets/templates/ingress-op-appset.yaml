@@ -13,16 +13,16 @@ spec:
             env: infra
   template:
     metadata:
-      name: '{{name}}-ingress-controller'
+      name: '{{ .Values.name }}-ingress-controller'
     spec:
       destination:
         namespace: openshift-ingress-operator
-        server: '{{server}}'
+        server: '{{ .Values.server }}'
       project: default
       source:
         helm:
           valueFiles:
-            - '../../{{name}}/values.yaml'
+            - '../../{{ .Values.name }}/values.yaml'
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/openshift-ingress-operator
         targetRevision: HEAD
