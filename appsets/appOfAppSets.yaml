@@ -1,0 +1,25 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-applicationsets 
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: {{ .Values.spec.destination.server }}
+  project: default
+    
+  source:
+    path: appsets
+    repoURL: https://github.com/r3dact3d/gitops
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - '../../{{ .Values.name }}/values.yaml'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
