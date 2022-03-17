@@ -7,7 +7,7 @@ metadata:
 spec:
   destination:
     namespace: openshift-gitops
-    server: {{ .Values.spec.destination.server }}
+    server: https://kubernetes.default.svc
   project: default
     
   source:
@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - './values.yaml'
+        - values.yaml
   syncPolicy:
     automated:
       prune: true
