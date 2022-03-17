@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - '../../{{ .Values.name }}/values.yaml'
+        - values.yaml
   syncPolicy:
     automated:
       prune: true
