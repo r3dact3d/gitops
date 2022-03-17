@@ -10,6 +10,7 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
+            env: special
   template:
     metadata:
       name: '{{name}}-gitops-helpers'
