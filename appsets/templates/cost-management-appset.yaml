@@ -13,16 +13,16 @@ spec:
             env: demo
   template:
     metadata:
-      name: '{{ .Values.name }}-cost-management'
+      name: '{{name}}-cost-management'
     spec:
       destination:
         namespace: costmanagement-metrics-operator
-        server: '{{ .Values.server }}'
+        server: '{{server}}'
       project: default
       source:
         helm:
           valueFiles:
-            - '../../{{.Values.name }}/values.yaml'
+            - '../../{{name}}/values.yaml'
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/cost-management
         targetRevision: HEAD
