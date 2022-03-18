@@ -15,6 +15,9 @@ spec:
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/openshift-config
         targetRevision: HEAD
+        helm:
+          valueFiles:
+            - '../../{{name}}/values.yaml'
       destination:
         namespace: openshift-config
         server: '{{server}}'
