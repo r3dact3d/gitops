@@ -13,11 +13,11 @@ spec:
             env: demo
   template:
     metadata:
-      name: '{{ .Values.name }}-openshift-certificates'
+      name: '{{name}}-openshift-certificates'
     spec:
       destination:
         namespace: openshift-operators
-        server: '{{ .Values.server }}'
+        server: '{{server}}'
       project: default
       source:
         path: common-base/openshift-certificates
@@ -25,7 +25,7 @@ spec:
         targetRevision: HEAD
         helm:
           valueFiles:
-            - '../../{{ .Values.name }}/values.yaml'
+            - '../../{{name}}/values.yaml'
       syncPolicy:
         automated:
           prune: true
