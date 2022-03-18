@@ -1,6 +1,6 @@
 = GitOps
 
-You can see an example workflow that uses this repo for GitOps link:r3dact3d/OCP4-Deploy[https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml]
+You can see an example workflow that uses this repo for GitOps link:https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml[r3dact3d/OCP4-Deploy]
 
 .Install GitOps Operator
 ----
