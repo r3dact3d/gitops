@@ -1,5 +1,7 @@
 = GitOps
 
+You can see an example workflow that uses this repo for GitOps link:r3dact3d/OCP4-Deploy[https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml]
+
 .Install GitOps Operator
 ----
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-operator.yaml -n openshift-operators
