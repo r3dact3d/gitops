@@ -1,2 +1,3 @@
 name: blinker19
 baseDomain: sandbox43.opentlc.com
+server: https://kubernetes.default.svc
