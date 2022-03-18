@@ -13,16 +13,16 @@ spec:
             env: demo
   template:
     metadata:
-      name: '{{ .Values.name }}-compliance-operator'
+      name: '{{name}}-compliance-operator'
     spec:
       destination:
         namespace: openshift-compliance
-        server: '{{ .Values.server }}'
+        server: '{{server}}'
       project: default
       source:
         helm:
           valueFiles:
-            - '../../{{ .Values.name }}/values.yaml'
+            - '../../{{name}}/values.yaml'
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/openshift-compliance
         targetRevision: HEAD
