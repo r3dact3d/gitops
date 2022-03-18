@@ -13,16 +13,16 @@ spec:
             env: special
   template:
     metadata:
-      name: '{{ .Values.name }}-gitops-helpers'
+      name: '{{name}}-gitops-helpers'
     spec:
       destination:
         namespace: openshift-gitops
-        server: '{{ .Values.server }}'
+        server: '{{server}}'
       project: default
       source:
         helm:
           valueFiles:
-            - '../../{{ .Values.name }}/values.yaml'
+            - '../../{{name}}/values.yaml'
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/openshift-gitops
         targetRevision: HEAD
