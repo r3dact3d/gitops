@@ -1,1 +1,9 @@
 = GitOps
+
+.Install GitOps Operator
+----
+oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-operator.yaml -n openshift-operators
+oc project openshift-gitops
+oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller
+----
+
