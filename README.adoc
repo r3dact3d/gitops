@@ -37,19 +37,6 @@ link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] ma
 
 .link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding secret to this repo
 ----
-kind: Secret
-apiVersion: v1
-metadata:
-  name: blinker19 
-  namespace: openshift-gitops
-  labels:
-    argocd.argoproj.io/secret-type: cluster
-  annotations:
-    managed-by: argocd.argoproj.io
-data:
-  config: base64
-  name: base64
-  server: base64
-type: Opaque
+oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml
 ----
 
