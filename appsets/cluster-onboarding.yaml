@@ -7,9 +7,9 @@ spec:
   generators:
   - clusters:
       selector:
-          matchLabels:
-            argocd.argoproij.io/secret-type: cluster
-            local: only
+        matchLabels:
+          argocd.argoproij.io/secret-type: cluster
+          local: only
   template:
     metadata:
       name: 'cluster-onboarding'
