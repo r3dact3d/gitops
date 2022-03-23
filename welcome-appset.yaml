@@ -1,8 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: welcome-hooks-2
-  namespace: argocd
+  name: welcome-hooks
   labels:
     app: test
 spec:
@@ -16,7 +15,7 @@ spec:
       name: '{{name}}-hooks'
     spec:
       destination:
-        namespace: argocd
+        namespace: 'welcome-{{name}}'
         server: '{{server}}'
       project: default
       source:
