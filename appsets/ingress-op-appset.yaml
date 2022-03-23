@@ -20,9 +20,6 @@ spec:
         server: '{{server}}'
       project: default
       source:
-        helm:
-          valueFiles:
-            - '../../{{name}}/values.yaml'
         repoURL: 'https://github.com/r3dact3d/gitops'
         path: common-base/openshift-ingress-operator
         targetRevision: HEAD
