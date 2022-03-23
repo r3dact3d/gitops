@@ -9,7 +9,6 @@ spec:
       selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            env: demo
   template:
     metadata:
       name: '{{name}}-openshift-config'
