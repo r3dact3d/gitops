@@ -2,6 +2,13 @@
 
 You can see an example workflow that uses this repo for GitOps link:https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml[r3dact3d/OCP4-Deploy]
 
+== Purpose
+
+This repo contains everything needed to 
+* provision a hub GitOps Instance 
+* Day2 cluster config applicationsets
+* On-board remote clusters via cluster generator
+
 .Install GitOps Operator
 ----
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitops-operator.yaml -n openshift-operators
@@ -13,5 +20,7 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 ----
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitopsservice.yaml
 ----
+
+
 
 
