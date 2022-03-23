@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-applications 
+  name: gitops-applicationsets 
   namespace: openshift-gitops
 spec:
   destination:
@@ -11,7 +11,7 @@ spec:
   project: default
     
   source:
-    path: cluster-config
+    path: appsets
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
     helm:
