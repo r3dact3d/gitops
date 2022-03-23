@@ -35,7 +35,7 @@ link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] ma
 
 == Onboard
 
-.link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding secret to this repo
+.link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding secret to this repo and create the ArgoCD application below to monitor the repo for changes, making onboarding automatic
 ----
 oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml
 ----
