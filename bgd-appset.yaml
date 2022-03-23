@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: bdg
+spec:
+  generators:
+  - clusters:
+      selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: '{{name}}-bgd'
+    spec:
+      source:
+        repoURL: 'https://github.com/christianh814/bgd'
+        targetRevision: HEAD
+        path: app/overlays/default/
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'bgd-{{name}}'
