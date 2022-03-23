@@ -5,7 +5,10 @@ metadata:
   name: openshift-config-appset
 spec:
   generators:
-  - clusters: {}
+  - clusters:
+      selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
   template:
     metadata:
       name: '{{name}}-openshift-config'
