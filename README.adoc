@@ -8,7 +8,9 @@ This repo contains everything needed to:
 
 * provision a hub GitOps Instance 
 * Day2 cluster config applicationsets
-* On-board remote clusters via cluster generator
+* Onboard remote clusters via cluster generator
+
+== Provision
 
 .Install GitOps Operator
 ----
@@ -22,6 +24,8 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitopsservice.yaml
 ----
 
+== Day2
 
+== Onboard
 
 
