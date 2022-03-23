@@ -23,9 +23,6 @@ spec:
         path: common-base/openshift-monitoring
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
-        helm:
-          valueFiles:
-            - '../../{{name}}/values.yaml'
       syncPolicy:
         automated:
           prune: true
