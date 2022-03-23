@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: welcome-hooks
+  name: todo-appset
   labels:
     app: test
 spec:
@@ -12,14 +12,14 @@ spec:
             argocd.argoproj.io/secret-type: cluster
   template:
     metadata:
-      name: '{{name}}-hooks'
+      name: '{{name}}-todo'
     spec:
       destination:
-        namespace: 'welcome-{{name}}'
+        namespace: 'todo-{{name}}'
         server: '{{server}}'
       project: default
       source:
-        path: apps/welcome-php/overlays/hooks
+        path: apps/todo
         repoURL: 'https://github.com/taiseerhussein/openshift-gitops-examples.git'
         targetRevision: 2.0.3
       syncPolicy:
