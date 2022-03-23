@@ -21,7 +21,6 @@ spec:
       source:
         path: apps/todo
         repoURL: 'https://github.com/taiseerhussein/openshift-gitops-examples.git'
-        targetRevision: 2.0.3
       syncPolicy:
         automated:
           prune: true
