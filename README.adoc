@@ -4,7 +4,8 @@ You can see an example workflow that uses this repo for GitOps link:https://gith
 
 == Purpose
 
-This repo contains everything needed to 
+This repo contains everything needed to:
+
 * provision a hub GitOps Instance 
 * Day2 cluster config applicationsets
 * On-board remote clusters via cluster generator
