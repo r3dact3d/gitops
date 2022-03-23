@@ -17,7 +17,7 @@ spec:
     - server auth
     - client auth
   dnsNames:
-  - api.{{ .Values.name }}.{{ .Values.baseDomain }}
+  - api.clustername.domain.com
   issuerRef:
     name: selfsigned-issuer
     kind: ClusterIssuer
