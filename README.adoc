@@ -26,6 +26,13 @@ oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluste
 
 == Day2
 
+.link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications
+----
+for i in $(ls appsets);do oc create -f $i;done
+----
+
+
+
 == Onboard
 
 
