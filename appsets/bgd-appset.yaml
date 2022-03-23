@@ -12,6 +12,7 @@ spec:
   template:
     metadata:
       name: '{{name}}-bgd'
+      namespace: '{{name}}-bgd'
     spec:
       source:
         repoURL: 'https://github.com/christianh814/bgd'
