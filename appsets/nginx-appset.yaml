@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: nginx
+spec:
+  generators:
+  - clusters:
+      selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: '{{name}}-nginx'
+      namespace: '{{name}}-nginx'
+    spec:
+      source:
+        repoURL: 'https://github.com/r3dact3d/studious-happiness'
+        targetRevision: HEAD
+        path: app/overlays/default/
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'nginx-{{name}}'
