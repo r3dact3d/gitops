@@ -8,13 +8,13 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          type: 'staging'
+          env: 'staging'
       values:
         revision: HEAD # staging clusters use HEAD branch
   - clusters:
       selector:
         matchLabels:
-          type: 'production'
+          env: 'production'
       values:
         revision: stable
   template:
