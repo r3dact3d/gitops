@@ -24,7 +24,7 @@ spec:
     spec:
       source:
         repoURL: 'https://github.com/r3dact3d/studious-happiness'
-        targetRevision: HEAD
+        targetRevision: '{{values.revision}}'
         path: webserver/base
       project: default
       syncPolicy:
