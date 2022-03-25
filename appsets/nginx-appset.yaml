@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: nginx
+  name: hello-openshift
 spec:
   generators:
   - clusters:
@@ -19,8 +19,8 @@ spec:
         revision: stable
   template:
     metadata:
-      name: '{{name}}-nginx'
-      namespace: '{{name}}-nginx'
+      name: '{{name}}-hello-openshift'
+      namespace: '{{name}}-hello-openshift'
     spec:
       source:
         repoURL: 'https://github.com/r3dact3d/studious-happiness'
@@ -35,4 +35,4 @@ spec:
           - CreateNamespace=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'nginx-{{name}}'
+        namespace: 'hello-{{name}}'
