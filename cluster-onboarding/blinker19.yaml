@@ -1,7 +1,7 @@
 kind: Secret
 apiVersion: v1
 metadata:
-  name: blinker19 
+  name: blinker-dev
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: cluster
