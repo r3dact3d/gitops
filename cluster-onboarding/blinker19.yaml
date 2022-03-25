@@ -5,10 +5,11 @@ metadata:
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: cluster
+    env: dev
   annotations:
     managed-by: argocd.argoproj.io
 data:
   config: eyJ0bHNDbGllbnRDb25maWciOnsiaW5zZWN1cmUiOmZhbHNlfX0=
-  name: YmxpbmtlcjE5Cg== 
+  name: Ymxpbmtlci1kZXYK
   server: aHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3Zj
 type: Opaque
