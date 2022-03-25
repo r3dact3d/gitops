@@ -1,15 +1,15 @@
 kind: Secret
 apiVersion: v1
 metadata:
-  name: blinker29 
+  name: blinker-prod
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: cluster
-    env: test
+    env: prod
   annotations:
     managed-by: argocd.argoproj.io
 data:
   config: eyJ0bHNDbGllbnRDb25maWciOnsiaW5zZWN1cmUiOmZhbHNlfX0=
-  name: YmxpbmtlcjI5Cg== 
+  name: Ymxpbmtlci1wcm9kCg== 
   server: aHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3Zj
 type: Opaque
