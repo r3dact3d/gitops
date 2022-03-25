@@ -7,8 +7,16 @@ spec:
   generators:
   - clusters:
       selector:
-          matchLabels:
-            argocd.argoproj.io/secret-type: cluster
+        matchLabels:
+          type: 'staging'
+      values:
+        revision: HEAD # staging clusters use HEAD branch
+  - clusters:
+      selector:
+        matchLabels:
+          type: 'production'
+      values:
+        revision: stable
   template:
     metadata:
       name: '{{name}}-nginx'
