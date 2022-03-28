@@ -12,14 +12,17 @@ This repo contains everything needed to:
 
 == GitOps Hub
 
-.Install GitOps Operator
+. Install GitOps Operator
+
 ----
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitops-operator.yaml -n openshift-operators
 oc project openshift-gitops
 oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller
 ----
 
-.Optional for running GitOps service on Infra nodes
+[start=2]
+. Optional for running GitOps service on Infra nodes
+
 ----
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitopsservice.yaml
 ----
@@ -36,7 +39,8 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 . link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
 
 
-== ApplicationSets
+== Applicationsets
+
 
 .link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications
 ----
