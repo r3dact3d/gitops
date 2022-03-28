@@ -27,6 +27,8 @@ oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluste
 
 == Cluster Onboarding
 
+Leverage the link:https://argocd-applicationset.readthedocs.io/en/stable/Generators-Cluster/[Cluster] Generator to onboard managed clusters by storing parameters in link:https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters[secrets] 
+
 . Create ArgoCD link:https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml[application] to keep kubernetes resources synced that are required for the Cluster generator 
 
 ----
