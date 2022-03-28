@@ -9,25 +9,18 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 * <<Applicationsets, Applicationsets>>
 * <<Labels, Labels>>
 
--GitOps
-    |
-    - appsets
-    |
-    - cluster-onboarding
-    |
-    - common-base
-        |
-        -- openshift-config
-        |
-        -- openshift-monitoring
-        |
-        -- openshift-ingress-operator
-        |
-        -- openshift-compliance
-        |
-        -- cert-manager
-        |
-    - gitops-cluster
+GitOps/
+├─ appsets/
+├─ cluster-onboarding/
+├─ common-base/
+│  ├─ openshift-config
+│  ├─ openshift-monitoring
+│  ├─ openshift-ingress-operator
+│  ├─ openshift-compliance
+│  ├─ cert-manager
+├─ gitops-cluster
+├─ README.adoc
+
     
 == GitOps Hub
 
