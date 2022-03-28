@@ -1,16 +1,16 @@
 = GitOps
 
-You can see an example workflow that uses this repo for GitOps link:https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml[r3dact3d/OCP4-Deploy]
+NOTE: You can see an example workflow that uses this repo for GitOps link:https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml[r3dact3d/OCP4-Deploy]
 
-== Purpose
+== Contetnt
 
 This repo contains everything needed to:
 
-* provision a hub GitOps Instance 
-* Day2 cluster config applicationsets
+* <<GitOps Hub, GitOps Hub>>
+* <<Cluster Onboarding, Cluster Onboarding>>
 * Onboard remote clusters via cluster generator
 
-== Provision
+== GitOps Hub
 
 .Install GitOps Operator
 ----
@@ -24,6 +24,13 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitopsservice.yaml
 ----
 
+== Cluster Onboarding
+
+.link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding secret to this repo and create the ArgoCD application below to monitor the repo for changes, making onboarding automatic
+----
+oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml
+----
+
 == Day2
 
 .link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications
@@ -32,11 +39,3 @@ for i in $(ls appsets);do oc create -f $i;done
 ----
 
 link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] manifests logically grouped
-
-== Onboard
-
-.link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding secret to this repo and create the ArgoCD application below to monitor the repo for changes, making onboarding automatic
-----
-oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml
-----
-
