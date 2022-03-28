@@ -4,8 +4,6 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 
 == Contetnt
 
-This repo contains everything needed to:
-
 * <<GitOps Hub, GitOps Hub>>
 * <<Cluster Onboarding, Cluster Onboarding>>
 * <<Applicationsets>>
@@ -40,7 +38,6 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 
 
 == Applicationsets
-
 
 .link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications
 ----
