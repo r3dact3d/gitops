@@ -9,6 +9,26 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 * <<Applicationsets, Applicationsets>>
 * <<Labels, Labels>>
 
+-GitOps
+    |
+    - appsets
+    |
+    - cluster-onboarding
+    |
+    - common-base
+        |
+        -- openshift-config
+        |
+        -- openshift-monitoring
+        |
+        -- openshift-ingress-operator
+        |
+        -- openshift-compliance
+        |
+        -- cert-manager
+        |
+    - gitops-cluster
+    
 == GitOps Hub
 
 . Install GitOps Operator
@@ -42,7 +62,12 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 
 == Applicationsets
 
-.link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications
+link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications. The strategy here is to apply all applicationsets to hub cluster for the applicationset controller to monitor.
+
+
+    
+    
+    
 ----
 for i in $(ls appsets);do oc create -f $i;done
 ----
