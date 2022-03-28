@@ -6,7 +6,8 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 
 * <<GitOps Hub, GitOps Hub>>
 * <<Cluster Onboarding, Cluster Onboarding>>
-* <<Applicationsets>>
+* <<Applicationsets, Applicationsets>>
+* <<Labels, Labels>>
 
 == GitOps Hub
 
@@ -47,3 +48,5 @@ for i in $(ls appsets);do oc create -f $i;done
 ----
 
 link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] manifests logically grouped
+
+== Labels
