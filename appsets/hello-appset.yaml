@@ -10,13 +10,13 @@ spec:
         matchLabels:
           env: 'dev'
       values:
-        revision: HEAD # staging clusters use HEAD branch
+        revision: HOTFIX
   - clusters:
       selector:
         matchLabels:
           env: 'prod'
       values:
-        revision: stable
+        revision: HEAD
   template:
     metadata:
       name: '{{name}}-hello-openshift'
