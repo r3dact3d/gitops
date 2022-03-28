@@ -8,7 +8,7 @@ This repo contains everything needed to:
 
 * <<GitOps Hub, GitOps Hub>>
 * <<Cluster Onboarding, Cluster Onboarding>>
-* Onboard remote clusters via cluster generator
+* <<Applicationsets>>
 
 == GitOps Hub
 
@@ -32,10 +32,11 @@ oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluste
 oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml
 ----
 
+[start=2]
 . link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
 
 
-== Day2
+== ApplicationSets
 
 .link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications
 ----
