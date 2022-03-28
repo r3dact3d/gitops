@@ -9,6 +9,7 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 * <<Applicationsets, Applicationsets>>
 * <<Labels, Labels>>
 
+----
 GitOps/
 ├─ appsets/
 ├─ cluster-onboarding/
@@ -18,9 +19,9 @@ GitOps/
 │  ├─ openshift-ingress-operator
 │  ├─ openshift-compliance
 │  ├─ cert-manager
-├─ gitops-cluster
+├─ gitops-cluster/
 ├─ README.adoc
-
+----
     
 == GitOps Hub
 
