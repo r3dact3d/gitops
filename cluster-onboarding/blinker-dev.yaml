@@ -5,6 +5,7 @@ metadata:
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: cluster
+    role: hub
     env: dev
   annotations:
     managed-by: argocd.argoproj.io
