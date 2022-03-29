@@ -6,7 +6,7 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 
 * <<Hub Cluster, Hub Cluster>>
 * <<Managed Cluster Onboarding, Managed Cluster Onboarding>>
-* <<Applicationsets, Applicationsets>>
+* <<Application Onboarding, Application Onboarding>>
 * <<Labels, Labels>>
 
 ----
@@ -54,12 +54,14 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 . link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
 
 
-== Applicationsets
+== Application Onboarding
 
 link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications. The strategy here is to apply all applicationsets to hub cluster for the applicationset controller to monitor.
+
+In fact we can treat a git repo with applicationsets as an argoCD application as well.
     
 ----
-for i in $(ls appsets);do oc create -f $i;done
+oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/application-onboarding-app.yaml
 ----
 
 link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] manifests logically grouped
