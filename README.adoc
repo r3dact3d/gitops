@@ -4,8 +4,8 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 
 == Content
 
-* <<GitOps Hub, GitOps Hub>>
-* <<Cluster Onboarding, Cluster Onboarding>>
+* <<Hub Cluster, Hub Cluster>>
+* <<Managed Cluster Onboarding, Managed Cluster Onboarding>>
 * <<Applicationsets, Applicationsets>>
 * <<Labels, Labels>>
 
@@ -23,7 +23,7 @@ GitOps/
 ├─ README.adoc
 ----
     
-== GitOps Hub
+== Hub Cluster
 
 . Install GitOps Operator
 
@@ -40,7 +40,7 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitopsservice.yaml
 ----
 
-== Cluster Onboarding
+== Managed Cluster Onboarding
 
 Leverage the link:https://argocd-applicationset.readthedocs.io/en/stable/Generators-Cluster/[Cluster] Generator to onboard managed clusters by storing parameters in link:https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters[secrets] 
 
@@ -57,10 +57,6 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 == Applicationsets
 
 link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications. The strategy here is to apply all applicationsets to hub cluster for the applicationset controller to monitor.
-
-
-    
-    
     
 ----
 for i in $(ls appsets);do oc create -f $i;done
@@ -69,3 +65,6 @@ for i in $(ls appsets);do oc create -f $i;done
 link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] manifests logically grouped
 
 == Labels
+
+Kubernetes recommended link:https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#labels[labels].
+
