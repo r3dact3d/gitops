@@ -1,0 +1,16 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: NamespaceConfig
+metadata:
+  name: medium-namespace
+  selector:
+    matchLabels:
+      size: medium  
+  resources:
+  - apiVersion: v1
+    kind: ResourceQuota
+    metadata:
+      name: medium-size  
+    spec:
+      hard:
+        requests.cpu: "4"
+        requests.memory: "2Gi"
