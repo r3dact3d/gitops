@@ -1,0 +1,16 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: NamespaceConfig
+metadata:
+  name: small-namespace
+  selector:
+    matchLabels:
+      size: small  
+  resources:
+  - apiVersion: v1
+    kind: ResourceQuota
+    metadata:
+      name: small-size  
+    spec:
+      hard:
+        requests.cpu: "4"
+        requests.memory: "2Gi"
