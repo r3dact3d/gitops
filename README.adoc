@@ -1,4 +1,4 @@
-= GitOps
+= GitOps for OpenShift4  tested on 4.10.6
 
 NOTE: You can see an example workflow that uses this repo for GitOps link:https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml[r3dact3d/OCP4-Deploy]
 
