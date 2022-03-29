@@ -10,13 +10,13 @@ spec:
         matchLabels:
           env: 'dev'
       values:
-        revision: HOTFIX
+        revision: HEAD
   - clusters:
       selector:
         matchLabels:
           env: 'prod'
       values:
-        revision: HEAD
+        revision: stable
   template:
     metadata:
       name: '{{name}}-hello-openshift'
