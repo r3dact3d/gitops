@@ -1,6 +1,8 @@
 apiVersion: redhatcop.redhat.io/v1alpha1
 kind: NamespaceConfig
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true  
   name: medium-namespace
   selector:
     matchLabels:
