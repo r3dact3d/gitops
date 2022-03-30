@@ -1,0 +1,31 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: namespace-configuration-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+            demo: namespace-config
+  template:
+    metadata:
+      name: '{{name}}-namespace-config'
+    spec:
+      destination:
+        namespace: namespace-configuration-operator
+        server: '{{server}}'
+      project: default
+      source:
+        repoURL: 'https://github.com/r3dact3d/gitops'
+        path: common-base/namespace-config
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
