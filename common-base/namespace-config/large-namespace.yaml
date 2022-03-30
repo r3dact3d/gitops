@@ -4,15 +4,18 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: large-namespace
-  selector:
+spec:
+  labelSelector:
     matchLabels:
-      size: large  
-  resources:
-  - apiVersion: v1
-    kind: ResourceQuota
-    metadata:
-      name: large-size  
-    spec:
-      hard:
-        requests.cpu: "4"
-        requests.memory: "2Gi"
+      size: large
+  templates:
+  - objectTemplate: |  
+      apiVersion: v1
+      kind: ResourceQuota
+      metadata:
+        name: large-namespace
+        namespace: {{ .Name }}  
+      spec:
+        hard:
+          requests.cpu: "4"
+          requests.memory: "2Gi"
