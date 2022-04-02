@@ -9,10 +9,6 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 * <<Application Onboarding, Application Onboarding>>
 * <<Labels, Labels>>
 
-* Separate application source code from manifests 
-* Avoid duplication of yaml 
-
-
 ----
 GitOps/
 ├─ appsets/
@@ -57,7 +53,7 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 
 [start=2]
 . link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
-image::rhacm.png[]
+image::rhacm-diagram.png[]
 
 == Application Onboarding
 
