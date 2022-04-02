@@ -2,16 +2,10 @@
 
 NOTE: You can see an example workflow that uses this repo for GitOps link:https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml[r3dact3d/OCP4-Deploy]
 
-== Content
-
-* <<Hub Cluster, Hub Cluster>>
-* <<Managed Cluster Onboarding, Managed Cluster Onboarding>>
-* <<Application Onboarding, Application Onboarding>>
-* <<Labels, Labels>>
 
 ----
 GitOps/
-├─ appsets/
+├─ gitops-cluster/
 ├─ cluster-onboarding/
 ├─ common-base/
 │  ├─ openshift-config
@@ -19,12 +13,20 @@ GitOps/
 │  ├─ openshift-ingress-operator
 │  ├─ openshift-compliance
 │  ├─ cert-manager
-├─ gitops-cluster/
+├─ appsets/
 ├─ README.adoc
 ----
     
 
 image::gitops-workflow.png[GitOps Workflow]
+
+
+== Content
+
+* <<Hub Cluster, Hub Cluster>>
+* <<Managed Cluster Onboarding, Managed Cluster Onboarding>>
+* <<Application Onboarding, Application Onboarding>>
+* <<Labels, Labels>>
 
 
 == Hub Cluster
