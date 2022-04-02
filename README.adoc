@@ -23,7 +23,15 @@ GitOps/
 ├─ README.adoc
 ----
     
+
+image::gitops-workflow.png[GitOps Workflow]
+
+
 == Hub Cluster
+
+
+image::rhacm-diagram.png[RHACM Diagram]
+
 
 . Install GitOps Operator
 
@@ -53,11 +61,10 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 
 [start=2]
 . link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
-image::gitops-workflow.png[GitOps Workflow]
 
-image::rhacm-diagram.png[RHACM Diagram]
 
 image::cluster-generator-diagram.png[Cluster Generator Diagram]
+
 
 == Application Onboarding
 
