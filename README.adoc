@@ -9,6 +9,10 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 * <<Application Onboarding, Application Onboarding>>
 * <<Labels, Labels>>
 
+* Separate application source code from manifests 
+* Avoid duplication of yaml 
+
+
 ----
 GitOps/
 ├─ appsets/
