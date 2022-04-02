@@ -30,9 +30,6 @@ image::gitops-workflow.png[GitOps Workflow]
 == Hub Cluster
 
 
-image::rhacm-diagram.png[RHACM Diagram]
-
-
 . Install GitOps Operator
 
 ----
@@ -47,6 +44,9 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 ----
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitopsservice.yaml
 ----
+
+
+image::rhacm-diagram.png[RHACM Diagram]
 
 
 == Managed Cluster Onboarding
