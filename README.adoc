@@ -44,6 +44,7 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitopsservice.yaml
 ----
 
+
 == Managed Cluster Onboarding
 
 Leverage the link:https://argocd-applicationset.readthedocs.io/en/stable/Generators-Cluster/[Cluster] Generator to onboard managed clusters by storing parameters in link:https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters[secrets] 
@@ -56,7 +57,7 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 
 [start=2]
 . link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
-
+image::rhacm.png[]
 
 == Application Onboarding
 
