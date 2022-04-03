@@ -11,28 +11,31 @@ spec:
           env: 'dev'
       values:
         revision: HEAD
+        env: dev
   - clusters:
       selector:
         matchLabels:
           env: 'prod'
       values:
         revision: stable
+        env: prod
   template:
     metadata:
-      name: '{{name}}-hello-openshift'
-      namespace: '{{name}}-hello-openshift'
+      name: 'hello-{{name}}'
     spec:
       source:
-        repoURL: 'https://github.com/r3dact3d/studious-happiness'
+        repoURL: 'https://github.com/r3dact3d/animated-bassoon'
         targetRevision: '{{values.revision}}'
-        path: webserver/base
+        path: 'app/overlays/{{values.env}}'
       project: default
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
+          allowEmpty: true
         syncOptions:
           - CreateNamespace=true
+          - ApplyOutOfSyncOnly=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'hello-{{name}}'
+        namespace: 'hello-houston-{{name}}'
