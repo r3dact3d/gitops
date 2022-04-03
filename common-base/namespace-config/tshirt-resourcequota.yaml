@@ -1,0 +1,68 @@
+---
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: NamespaceConfig
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: small-namespace
+spec:
+  labelSelector:
+    matchLabels:
+      size: small  
+  templates:
+  - objectTemplate: |  
+      apiVersion: v1
+      kind: ResourceQuota
+      metadata:
+        name: small-namespace
+        namespace: {{ .Name }}  
+      spec:
+        hard:
+          requests.cpu: "4"
+          requests.memory: "2Gi"
+
+---
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: NamespaceConfig
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true  
+  name: medium-namespace
+spec:
+  labelSelector:
+    matchLabels:
+      size: medium
+  templates:
+  - objectTemplate: |  
+      apiVersion: v1
+      kind: ResourceQuota
+      metadata:
+        name: medium-namespace
+        namespace: {{ .Name }}  
+      spec:
+        hard:
+          requests.cpu: "4"
+          requests.memory: "2Gi"
+
+---
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: NamespaceConfig
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: large-namespace
+spec:
+  labelSelector:
+    matchLabels:
+      size: large
+  templates:
+  - objectTemplate: |  
+      apiVersion: v1
+      kind: ResourceQuota
+      metadata:
+        name: large-namespace
+        namespace: {{ .Name }}  
+      spec:
+        hard:
+          requests.cpu: "4"
+          requests.memory: "2Gi"
