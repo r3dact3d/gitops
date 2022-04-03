@@ -35,6 +35,7 @@ spec:
           allowEmpty: true
         syncOptions:
           - ApplyOutOfSyncOnly=true
+          - CreateNamespace=true
       destination:
         server: https://kubernetes.default.svc
         namespace: 'hello-houston-{{name}}'
