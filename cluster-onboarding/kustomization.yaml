@@ -1,0 +1,10 @@
+secretGenerator:
+- name: cluster
+  files:
+  - ./*-test.yaml
+generatorOptions:
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+    env: test
+  annotations:
+    managed-by: argocd.argoproj.io
