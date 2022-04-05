@@ -73,7 +73,6 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 . link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
 
 
-image::cluster-generator-diagram.png[Cluster Generator Diagram]
 
 
 == Application Onboarding
@@ -87,6 +86,9 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 ----
 
 link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] manifests logically grouped
+
+image::cluster-generator-diagram.png[Cluster Generator Diagram]
+
 
 == Labels
 
