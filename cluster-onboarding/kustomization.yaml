@@ -1,7 +1,7 @@
 secretGenerator:
 - name: cluster
   files:
-  - ./*-test.yaml
+  - ./*-test.txt
 generatorOptions:
   labels:
     argocd.argoproj.io/secret-type: cluster

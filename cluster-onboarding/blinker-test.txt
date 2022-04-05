@@ -1,0 +1,3 @@
+config: "{'tlsClientConfig':{'insecure':false}}"
+name: "blinker-test"
+server: "https://kubernetes.default.svc"
