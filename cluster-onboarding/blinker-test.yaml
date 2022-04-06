@@ -1,0 +1,15 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: blinker-test
+  namespace: openshift-gitops
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+    env: test
+  annotations:
+    managed-by: argocd.argoproj.io
+data:
+  config: eyJ0bHNDbGllbnRDb25maWciOnsiaW5zZWN1cmUiOmZhbHNlfX0=
+  name: Ymxpbmtlci10ZXN0Cg==
+  server: aHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3Zj
+type: Opaque
