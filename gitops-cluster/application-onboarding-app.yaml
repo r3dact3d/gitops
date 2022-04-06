@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: appsets 
+    path: application-onboarding 
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
   syncPolicy:

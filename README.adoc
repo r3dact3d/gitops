@@ -27,7 +27,7 @@ GitOps/
 │  ├─ openshift-ingress-operator
 │  ├─ openshift-compliance
 │  ├─ cert-manager
-├─ appsets/
+├─ application-onboarding/
 ├─ README.adoc
 ----
 
@@ -77,7 +77,7 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 
 == Application Onboarding
 
-link:https://github.com/r3dact3d/gitops/tree/main/appsets[Applicationsets] with cluster generator are used to manage the ArgoCD applications. The strategy here is to apply all applicationsets to hub cluster for the applicationset controller to monitor.
+link:https://github.com/r3dact3d/gitops/tree/main/application-onboarding[Applicationsets] with cluster generator are used to manage the ArgoCD applications. The strategy here is to apply all applicationsets to hub cluster for the applicationset controller to monitor.
 
 In fact we can treat a git repo with applicationsets as an argoCD application as well.
     
