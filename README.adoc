@@ -34,7 +34,7 @@ GitOps/
 == GitOps WorkFlow
 
 
-image::gitops-workflow.png[GitOps Workflow]
+image::docs/gitops-workflow.png[GitOps Workflow]
 
 
 == Hub Cluster
@@ -56,7 +56,7 @@ oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluste
 ----
 
 
-image::rhacm-diagram.png[RHACM Diagram]
+image::docs/rhacm-diagram.png[RHACM Diagram]
 
 
 == Managed Cluster Onboarding
@@ -87,7 +87,7 @@ oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-clust
 
 link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] manifests logically grouped
 
-image::cluster-generator-diagram.png[Cluster Generator Diagram]
+image::docs/cluster-generator-diagram.png[Cluster Generator Diagram]
 
 
 == Labels
