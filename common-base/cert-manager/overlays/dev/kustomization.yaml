@@ -3,4 +3,5 @@ resources:
 commonLabels:
   env: dev
 patchesStrategicMerge:
-- .yaml
+- api-cert-patch.yaml
+- wildcard-cert-patch.yaml
