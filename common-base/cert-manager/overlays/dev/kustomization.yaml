@@ -5,3 +5,4 @@ commonLabels:
 patchesStrategicMerge:
 - api-cert-patch.yaml
 - wildcard-cert-patch.yaml
+- cluster-apiserver-patch.yaml
