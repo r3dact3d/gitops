@@ -1,2 +1,5 @@
 resources:
--
+- subscription.yaml
+- selfsigned-issuer.yaml
+- api-certificate.yaml
+- wildcard-certificate.yaml
