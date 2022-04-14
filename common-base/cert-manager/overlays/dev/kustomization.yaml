@@ -1,0 +1,6 @@
+resources:
+- ../../base
+commonLabels:
+  env: dev
+patchesStrategicMerge:
+- .yaml
