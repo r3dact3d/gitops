@@ -3,3 +3,4 @@ resources:
 - selfsigned-issuer.yaml
 - api-certificate.yaml
 - wildcard-certificate.yaml
+- cluster-apiserver.yaml
