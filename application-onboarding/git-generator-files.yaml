@@ -24,8 +24,8 @@ spec:
           - CreateNamespace=true
       source:
         repoURL: 'https://github.com/r3dact3d/animated-bassoon'
-        targetRevision: '{{values.revision}}'
-        path: 'app/overlays/{{values.env}}'
+        targetRevision: '{{revision}}'
+        path: 'app/overlays/{{env}}'
       destination:
         server: https://kubernetes.default.svc
         #server: '{{cluster.address}}'
