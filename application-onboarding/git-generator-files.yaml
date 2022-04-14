@@ -14,6 +14,14 @@ spec:
       name: '{{cluster.name}}-guestbook'
     spec:
       project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
+        syncOptions:
+          - ApplyOutOfSyncOnly=true
+          - CreateNamespace=true
       source:
         repoURL: https://github.com/argoproj/applicationset.git
         targetRevision: HEAD
