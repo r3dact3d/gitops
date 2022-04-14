@@ -1,0 +1,10 @@
+apiVersion: costmanagement-metrics-cfg.openshift.io/v1beta1
+kind: CostManagementMetricsConfig
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: costmanagementmetricscfg-sample-v1beta1
+  namespace: costmanagement-metrics-operator
+spec:
+  source:
+    name: dev-server-source
