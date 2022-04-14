@@ -1,0 +1,10 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: selfsigned-api-cert
+  namespace: openshift-config
+spec:
+  dnsNames:
+  - api.clustername.domain.com
