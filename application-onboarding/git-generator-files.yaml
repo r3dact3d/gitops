@@ -8,7 +8,7 @@ spec:
         repoURL: https://github.com/r3dact3d/gitops.git
         revision: HEAD
         files:
-        - path: "git-server/git-generator-files-discovery/cluster-config/**/config.json"
+        - path: "git-server/git-generator-files-discovery/cluster-config/dumb/config.json"
   template:
     metadata:
       name: '{{cluster.name}}-guestbook'
@@ -23,9 +23,9 @@ spec:
           - ApplyOutOfSyncOnly=true
           - CreateNamespace=true
       source:
-        repoURL: https://github.com/argoproj/applicationset.git
-        targetRevision: HEAD
-        path: "examples/git-generator-files-discovery/apps/guestbook"
+        repoURL: 'https://github.com/r3dact3d/animated-bassoon'
+        targetRevision: '{{values.revision}}'
+        path: 'app/overlays/{{values.env}}'
       destination:
         server: https://kubernetes.default.svc
         #server: '{{cluster.address}}'
