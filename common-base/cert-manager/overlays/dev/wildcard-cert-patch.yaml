@@ -1,0 +1,10 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: selfsigned-wildcard-cert
+  namespace: openshift-ingress
+spec:
+  dnsNames:
+  - .apps.clustername.domain.com
