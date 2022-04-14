@@ -11,6 +11,10 @@ spec:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
             demo: cost-management
+        values:
+          revision: HEAD
+          env: dev
+
   template:
     metadata:
       name: '{{name}}-cost-management'
@@ -21,7 +25,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
-        path: common-base/cost-management
+        path: 'common-base/cost-management/overlays/{{values.env}}'
         targetRevision: HEAD
       syncPolicy:
         automated:
