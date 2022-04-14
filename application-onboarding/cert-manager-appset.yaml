@@ -11,6 +11,9 @@ spec:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
             demo: certificate-manager
+        values:
+          revision: HEAD
+          env: dev
   template:
     metadata:
       name: '{{name}}-cert-manager'
@@ -20,7 +23,7 @@ spec:
         server: '{{server}}'
       project: default
       source:
-        path: common-base/cert-manager
+        path: 'common-base/cert-manager/overlays/{{values.env}}'
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
       syncPolicy:
