@@ -1,6 +1,8 @@
 apiVersion: fileintegrity.openshift.io/v1alpha1
 kind: FileIntegrity
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: worker-fileintegrity
   namespace: openshift-file-integrity
 spec:
