@@ -1,1 +1,5 @@
-tester
+resources:
+  - namespace.yaml
+  - operator-group.yaml
+  - subscription.yaml
+  - file-integrity-crd.yaml
