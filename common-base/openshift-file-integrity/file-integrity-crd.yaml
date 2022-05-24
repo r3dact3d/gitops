@@ -3,7 +3,7 @@ kind: FileIntegrity
 metadata:
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-  name: worker-fileintegrity
+  name: rhcos-fileintegrity
   namespace: openshift-file-integrity
 spec:
   nodeSelector:
