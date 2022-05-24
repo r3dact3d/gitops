@@ -13,9 +13,6 @@ rawResultStorage:
   rotation: 3
   size: 1Gi
   tolerations:
-  - key: infra
-    value: reserved
-    effect: NoSchedule
   - effect: NoSchedule
     key: node-role.kubernetes.io/master
     operator: Exists
@@ -35,6 +32,9 @@ roles:
 - worker
 scanTolerations:
 - operator: Exists
+- key: infra
+  value: reserved
+  effect: NoSchedule
 schedule: 0 1 * * *
 showNotApplicable: false
 strictNodeScan: true
