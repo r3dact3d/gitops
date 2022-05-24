@@ -7,9 +7,11 @@ metadata:
   namespace: openshift-file-integrity
 spec:
   nodeSelector:
-      node-role.kubernetes.io/worker: ""
+    node.openshift.io/os_id: "rhcos"
   tolerations:
     - key: infra
       value: reserved
       effect: NoSchedule
-  config: {}
+  config:
+    gracePeriod: '86400'
+    
