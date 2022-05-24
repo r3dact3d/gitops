@@ -5,11 +5,11 @@ profiles:
     kind: Profile
 settingsRef:
   apiGroup: compliance.openshift.io/v1alpha1
-  name: default
+  name: custom
   kind: ScanSetting
 kind: ScanSettingBinding
 metadata:
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-  name: nist-moderate
+  name: custom-moderate
   namespace: openshift-compliance
