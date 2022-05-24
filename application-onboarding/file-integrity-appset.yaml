@@ -11,9 +11,6 @@ spec:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
             demo: file-integrity
-        values:
-          revision: HEAD
-          env: dev
   template:
     metadata:
       name: '{{name}}-file-integrity'
