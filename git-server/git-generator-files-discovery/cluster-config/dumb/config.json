@@ -1,9 +1,0 @@
-{
-  "revision": "HEAD",
-  "env": "prod",
-  "cluster": {
-    "owner": "cluster-admin@company.com",
-    "name": "engineering-prod",
-    "address": "http://1.2.3.4"
-  }
-}
