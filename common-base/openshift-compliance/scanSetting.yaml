@@ -1,6 +1,8 @@
 apiVersion: compliance.openshift.io/v1alpha1
 kind: ScanSetting
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: custom
   namespace: openshift-compliance
 rawResultStorage:
