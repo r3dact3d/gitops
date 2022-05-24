@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/secret-type: cluster
     role: infra
     env: dev
-    demo: namespace-config
+    demo: file-integrity
   annotations:
     managed-by: argocd.argoproj.io
 data:
