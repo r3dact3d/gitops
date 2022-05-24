@@ -1,0 +1,32 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: file-integrity-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+            demo: file-integrity
+        values:
+          revision: HEAD
+          env: dev
+  template:
+    metadata:
+      name: '{{name}}-file-integrity'
+    spec:
+      destination:
+        namespace: openshift-file-integrity
+        server: '{{server}}'
+      project: default
+      source:
+        path: 'common-base/openshift-file-integrity'
+        repoURL: https://github.com/r3dact3d/gitops
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
