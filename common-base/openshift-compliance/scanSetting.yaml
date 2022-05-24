@@ -1,0 +1,42 @@
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSetting
+metadata:
+  creationTimestamp: "2022-05-24T18:23:01Z"
+  generation: 1
+  name: default
+  namespace: openshift-compliance
+  resourceVersion: "100843"
+  uid: b88bd9ee-0fc1-46a8-b52d-e87f7474e72e
+rawResultStorage:
+  nodeSelector:
+    node-role.kubernetes.io/master: ""
+  pvAccessModes:
+  - ReadWriteOnce
+  rotation: 3
+  size: 1Gi
+  tolerations:
+  - key: infra
+    value: reserved
+    effect: NoSchedule
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+    operator: Exists
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+roles:
+- master
+- worker
+scanTolerations:
+- operator: Exists
+schedule: 0 1 * * *
+showNotApplicable: false
+strictNodeScan: true
