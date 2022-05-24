@@ -17,4 +17,5 @@ spec:
       effect: NoSchedule
   config:
     gracePeriod: 86400
+  debug: true
     
