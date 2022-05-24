@@ -8,4 +8,8 @@ metadata:
 spec:
   nodeSelector:
       node-role.kubernetes.io/worker: ""
+  tolerations:
+    - key: infra
+      value: reserved
+      effect: NoSchedule
   config: {}
