@@ -10,6 +10,6 @@ metadata:
     managed-by: argocd.argoproj.io
 data:
   config: eyJ0bHNDbGllbnRDb25maWciOnsiaW5zZWN1cmUiOmZhbHNlfX0=
-  name: Ymxpbmtlci1wcm9kCg== 
+  name: Ymxpbmtlci1wcm9k
   server: aHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3Zj
 type: Opaque
