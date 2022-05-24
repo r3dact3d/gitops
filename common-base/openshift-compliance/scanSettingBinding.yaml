@@ -13,10 +13,3 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: nist-moderate
   namespace: openshift-compliance
-scanTolerations:
-- effect: NoSchedule
-  key: node-role.kubernetes.io/master
-  operator: Exists
-- key: infra
-  value: reserved
-  effect: NoSchedule
