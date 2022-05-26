@@ -1,0 +1,18 @@
+apiVersion: operator.aquasec.com/v1alpha1
+kind: AquaEnforcer
+metadata:
+  name: aqua
+spec:
+  infra:                                    # Required: Infrastructure information
+    serviceAccount: "aqua-sa"               # Required: 
+  gateway:                                  # Required: data about the gateway address
+    host: aqua-gateway
+    port: 8443
+  token: "token"                            # Required: enforcer group token also can use an existing secret instead
+  env:                                      # Optional: environment variables to add to the enforcer
+  - name: "SOME ENV"
+    value: "SOME ENV VALUE"
+  secret:                                   # Optional: secret for the enforcer token
+    name:
+    key:
+  runAsNonRoot:                             # Optional: true/false
