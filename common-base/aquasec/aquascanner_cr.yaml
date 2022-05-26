@@ -1,0 +1,12 @@
+apiVersion: operator.aquasec.com/v1alpha1
+kind: AquaScanner
+metadata:
+  name: aqua
+spec:
+  deploy:                                   # Required: information about aqua scanner deployment
+    replicas: 1                             # Required: number of replicas
+  login:                                    # Required: Information about login to aqua server for scanning
+    username:
+    password:
+    host:
+  runAsNonRoot:                             # Optional: true/false
