@@ -4,7 +4,7 @@ metadata:
   labels:
     operators.coreos.com/aqua-operator-certified.openshift-gitops: ""
   name: aqua-operator-certified
-  namespace: openshift-gitops
+  namespace: aqua
 spec:
   channel: "6.5"
   installPlanApproval: Automatic
