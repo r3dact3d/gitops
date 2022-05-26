@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    operators.coreos.com/aqua-operator-certified.openshift-gitops: ""
+  name: aqua-operator-certified
+  namespace: openshift-gitops
+spec:
+  channel: "6.5"
+  installPlanApproval: Automatic
+  name: aqua-operator-certified
+  source: certified-operators
+  sourceNamespace: openshift-marketplace
