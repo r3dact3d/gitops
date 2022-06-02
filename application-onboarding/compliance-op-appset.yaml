@@ -10,7 +10,7 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            env: dev
+            role: compliance
   template:
     metadata:
       name: '{{name}}-compliance-operator'
