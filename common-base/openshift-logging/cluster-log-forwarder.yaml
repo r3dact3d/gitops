@@ -28,13 +28,14 @@ spec:
    - name: container-logs
      inputRefs:
      - my-app-logs
+     - audit
      outputRefs:
      - splunk-server-secure
      - splunk-server
    - name: hedge-odds
      inputRefs:
      - infra
-     - audit
+     - application
      outputRefs:
      - splunk-server
      - splunk-server-secure
