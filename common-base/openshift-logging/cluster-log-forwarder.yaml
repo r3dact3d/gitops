@@ -18,6 +18,7 @@ spec:
      application:
         namespaces:
         - hello-houston-blinker-dev
+        - openshift-file-integrity
   pipelines:
    - name: container-logs
      inputRefs:
