@@ -13,7 +13,7 @@ spec:
      url: https://prd-p-iv34h.splunkcloud.com
      secret:
        name: testsecret
-    name: splunk-server 
+   - name: splunk-server 
      type: "fluentdForward"
      url: http://prd-p-iv34h.splunkcloud.com
      port: 8088
@@ -28,7 +28,7 @@ spec:
   pipelines:
    - name: container-logs
      inputRefs:
-     - application
+     - my-app-logs
      outputRefs:
      - splunk-server-secure
      - splunk-server
