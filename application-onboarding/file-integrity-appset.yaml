@@ -10,7 +10,7 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            demo: file-integrity
+            env: dev
   template:
     metadata:
       name: '{{name}}-file-integrity'
