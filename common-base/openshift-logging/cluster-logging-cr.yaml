@@ -14,7 +14,6 @@ spec:
         - key: infra
           value: reserved
           effect: NoSchedule
-          tolerationSeconds: 6000
         resources:
           limits: 
             memory: 736Mi
