@@ -11,8 +11,8 @@ spec:
    - name: splunk-server-secure 
      type: "fluentdForward"
      url: https://127.0.0.1
-#     secret:
-#        name: splunk-secret
+     secret:
+       name: testsecret
   inputs: 
    - name: my-app-logs
      application:
