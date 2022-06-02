@@ -1,0 +1,28 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-logging-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: '{{name}}-openshift-logging'
+    spec:
+      destination:
+        namespace: openshift-logging
+        server: '{{server}}'
+      project: default
+      source:
+        path: 'common-base/openshift-logging'
+        repoURL: https://github.com/r3dact3d/gitops
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
