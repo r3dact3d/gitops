@@ -24,4 +24,3 @@ spec:
           requests:
             cpu: 100m
             memory: 736Mi
-        token: af3a7872-4df1-4493-8a6d-9a3646e574fa
