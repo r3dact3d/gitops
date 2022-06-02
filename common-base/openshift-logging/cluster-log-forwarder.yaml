@@ -32,7 +32,6 @@ spec:
      outputRefs:
      - splunk-server-secure
      - splunk-server
-     parse: json
    - name: hedge-odds
      inputRefs:
      - infra
@@ -40,4 +39,3 @@ spec:
      outputRefs:
      - splunk-server
      - splunk-server-secure
-     parse: json
