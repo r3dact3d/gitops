@@ -28,7 +28,7 @@ spec:
   pipelines:
    - name: container-logs
      inputRefs:
-     - application
+     - my-app-logs
      outputRefs:
      - splunk-server-secure
      - splunk-server
