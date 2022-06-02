@@ -10,12 +10,12 @@ spec:
   outputs:
    - name: splunk-server-secure 
      type: "fluentdForward"
-     url: https://prd-p-iv34h.splunkcloud.com
+     url: tls://prd-p-iv34h.splunkcloud.com
      secret:
        name: testsecret
    - name: splunk-server 
      type: "fluentdForward"
-     url: http://prd-p-iv34h.splunkcloud.com:8088
+     url: tcp://prd-p-iv34h.splunkcloud.com
      secret:
        name: testsecret
   inputs: 
