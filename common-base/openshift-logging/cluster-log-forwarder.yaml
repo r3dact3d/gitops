@@ -1,0 +1,24 @@
+---
+apiVersion: "logging.openshift.io/v1"
+kind: ClusterLogForwarder
+metadata:
+  name: instance 
+  namespace: openshift-logging 
+spec:
+  outputs:
+   - name: splunk-server-secure 
+     type: "fluentdForward"
+     url: https://127.0.0.1
+#     secret:
+#        name: splunk-secret
+  inputs: 
+   - name: my-app-logs
+     application:
+        namespaces:
+        - hello-houston-blinker-dev
+  pipelines:
+   - name: container-logs
+     inputRefs:
+     - application
+     outputRefs:
+     - splunk-server-secure
