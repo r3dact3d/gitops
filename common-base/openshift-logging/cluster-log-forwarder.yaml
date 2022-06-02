@@ -10,7 +10,7 @@ spec:
   outputs:
    - name: splunk-server-secure 
      type: "fluentdForward"
-     url: https://127.0.0.1
+     url: https://prd-p-iv34h.splunkcloud.com
      secret:
        name: testsecret
   inputs: 
@@ -24,3 +24,4 @@ spec:
      - application
      outputRefs:
      - splunk-server-secure
+
