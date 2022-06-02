@@ -12,6 +12,8 @@ spec:
     logs:
       type: "fluentd"  
       fluentd:
+        nodeSelector:
+          node.openshift.io/os_id: "rhcos"
         tolerations:
         - key: infra
           value: reserved
