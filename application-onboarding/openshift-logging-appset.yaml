@@ -11,7 +11,7 @@ spec:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
             role: infra
-            demo: logging
+            #demo: logging
   template:
     metadata:
       name: '{{name}}-openshift-logging'
