@@ -10,7 +10,7 @@ spec:
   outputs:
    - name: splunk-server-secure 
      type: "fluentdForward"
-     url: 'https://http-inputs-prd-p-iv34h.splunkcloud.com:8088/services/collector/event'
+     url: 'https://prd-p-iv34h.splunkcloud.com:8088/services/collector/event'
      secret:
        name: testsecret
    - name: splunk-server 
