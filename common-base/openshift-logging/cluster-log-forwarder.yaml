@@ -15,7 +15,7 @@ spec:
        name: testsecret
    - name: splunk-server 
      type: "fluentdForward"
-     url: 'http://http-inputs-prd-p-iv34h.splunkcloud.com:8088/services/collector/event'
+     url: 'http://prd-p-iv34h.splunkcloud.com:8088/services/collector/event'
      secret:
        name: testsecret
   inputs: 
