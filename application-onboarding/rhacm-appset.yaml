@@ -10,7 +10,7 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            role: rhacm
+            demo: rhacm
   template:
     metadata:
       name: '{{name}}-hub-cluster'
