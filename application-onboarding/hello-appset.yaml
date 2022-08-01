@@ -8,6 +8,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
+          argocd.argoproj.io/secret-type: cluster
           env: 'dev'
       values:
         revision: HEAD
@@ -15,6 +16,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
+          argocd.argoproj.io/secret-type: cluster
           env: 'prod'
       values:
         revision: stable
