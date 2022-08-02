@@ -1,3 +1,4 @@
-resources:
-- hub-cluster/kustomization.yaml
-- managed-cluster/kustomization.yaml
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    argocd.argoproj.io/secret-type: cluster
