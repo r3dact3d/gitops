@@ -2,9 +2,7 @@ secretGenerator:
 - name: hub-cluster-secret
   envs:
   - hub-cluster/cluster.env
-- name: managed-cluster-secret
-  envs:
-  - managed-cluster/cluster.env
+  
 generatorOptions:
   disableNameSuffixHash: true
   labels:
