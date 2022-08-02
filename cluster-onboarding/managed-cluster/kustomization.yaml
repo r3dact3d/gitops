@@ -1,13 +1,3 @@
-secretGenerator:
-- name: managed-cluster-secret
-  literals:
-  - config={"tlsClientConfig":{"insecure":false}}
-  - name=managed-cluster
-  - server=https://kubernetes.default.svc
-generatorOptions:
-  disableNameSuffixHash: true
-  labels:
-    argocd.argoproj.io/secret-type: cluster
-    env: dev
-  annotations:
-    managed-by: argocd.argoproj.io
+name=managed-cluster
+server=https://kubernetes.default.svc
+config={"tlsClientConfig":{"insecure":false}}
