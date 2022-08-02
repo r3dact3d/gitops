@@ -8,7 +8,7 @@ metadata:
   name: cluster-onboarding 
 spec:
   destination:
-    namespace: openshift-gitops
+    namespace: openshift-gitops/
     server: https://kubernetes.default.svc
   project: default
   source:
