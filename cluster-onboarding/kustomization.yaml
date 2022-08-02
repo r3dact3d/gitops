@@ -1,15 +1,3 @@
-namePrefix: hub-
-commonLabels:
-  argocd.argoproj.io/secret-type: cluster
-  role: infra
-commonAnnotations:
-  managed-by: argocd.argoproj.io
-secretGenerator:
-- name: hub-cluster-secret
-  literals:
-  - config={"tlsClientConfig":{"insecure":false}}
-  - name=hub-cluster
-  - server=https://kubernetes.default.svc
-  
-generatorOptions:
-  disableNameSuffixHash: true
+resources:
+- hub-cluster/kustomization.yaml
+- managed-cluster/kustomization.yaml
