@@ -4,7 +4,6 @@ secretGenerator:
   - config={"tlsClientConfig":{"insecure":false}}
   - name=hub-cluster
   - server=https://kubernetes.default.svc
-  
 generatorOptions:
   disableNameSuffixHash: true
   labels:
@@ -13,3 +12,16 @@ generatorOptions:
   annotations:
     managed-by: argocd.argoproj.io
 
+secretGenerator:
+- name: managed-cluster-secret
+  literals:
+  - config={"tlsClientConfig":{"insecure":false}}
+  - name=managed-cluster
+  - server=https://kubernetes.default.svc
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+    env: dev
+  annotations:
+    managed-by: argocd.argoproj.io
