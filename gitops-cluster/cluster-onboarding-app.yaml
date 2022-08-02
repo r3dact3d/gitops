@@ -15,8 +15,8 @@ spec:
     path: cluster-onboarding/
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
-  directory:
-    recurse: true
+    directory:
+      recurse: true
   syncPolicy:
     automated:
       prune: true
