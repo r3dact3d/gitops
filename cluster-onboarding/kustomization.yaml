@@ -9,6 +9,5 @@ generatorOptions:
   disableNameSuffixHash: true
   labels:
     argocd.argoproj.io/secret-type: cluster
-    type: infra
   annotations:
     managed-by: argocd.argoproj.io
