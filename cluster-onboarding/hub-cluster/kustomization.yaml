@@ -4,6 +4,7 @@ secretGenerator:
   - config={"tlsClientConfig":{"insecure":false}}
   - name=hub-cluster
   - server=https://kubernetes.default.svc
+  
 generatorOptions:
   disableNameSuffixHash: true
   labels:
