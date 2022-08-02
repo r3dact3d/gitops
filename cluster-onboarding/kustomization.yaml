@@ -1,10 +1,10 @@
 secretGenerator:
 - name: hub-cluster-secret
-  literals:
-  - config={"tlsClientConfig":{"insecure":false}}
-  - name=hub-cluster
-  - server=https://kubernetes.default.svc
-
+  envs:
+  - hub-cluster/cluster.env
+- name: managed-cluster-secret
+  envs:
+  - managed-cluster/cluster.env
 generatorOptions:
   disableNameSuffixHash: true
   labels:
