@@ -11,9 +11,11 @@ spec:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
             demo: rhacm
+        values:
+          environment: nonprod
   template:
     metadata:
-      name: '{{name}}-hub-cluster'
+      name: '{{values.environment}}-hub-cluster'
     spec:
       destination:
         namespace: open-cluster-management
