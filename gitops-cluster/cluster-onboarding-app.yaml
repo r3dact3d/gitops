@@ -2,9 +2,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  labels:
-    app.kubernetes.io/name: cluster-onboarding
-    role: hub
   name: cluster-onboarding 
 spec:
   destination:
