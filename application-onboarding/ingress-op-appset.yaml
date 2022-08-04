@@ -13,11 +13,11 @@ spec:
 
   template:
     metadata:
-      name: '{{name}}-ingress-controller'
+      name: '{{cluster}}-ingress-controller'
     spec:
       destination:
         namespace: openshift-ingress-operator
-        server: '{{server}}'
+        server: '{{url}}'
       project: default
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
