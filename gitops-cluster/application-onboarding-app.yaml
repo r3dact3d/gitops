@@ -3,7 +3,6 @@ kind: Application
 metadata:
   labels:
     app.kubernetes.io/name: application-onboarding
-    role: hub
   name: application-onboarding 
 spec:
   destination:
