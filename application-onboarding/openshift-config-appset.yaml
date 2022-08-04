@@ -5,11 +5,10 @@ metadata:
   name: openshift-config-appset
 spec:
   generators:
-    - clusters:
-        selector:
-          matchLabels:
-            argocd.argoproj.io/secret-type: cluster
-            role: infra
+  - list:
+      elements:
+      - cluster: in-cluster
+        url: https://kubernetes.default.svc
   template:
     metadata:
       name: '{{name}}-openshift-config'
