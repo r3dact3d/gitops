@@ -19,8 +19,8 @@
 - "name": "Default"
 - "name": "Watchdog"
 - "name": "Critical"
-- "name": "Test Group"
-  opsgenie_config:
+#- "name": "Test Group"
+#  opsgenie_config:
 # The API key to use when talking to the OpsGenie API.
 #    api_key: <secret>
 # The host to send OpsGenie API requests to.
