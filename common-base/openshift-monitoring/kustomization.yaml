@@ -1,0 +1,6 @@
+secretGenerator:
+- name: alertmanager-main
+  files:
+  - alertmanager.yaml
+generatorOptions:
+  disableNameSuffixHash: true
