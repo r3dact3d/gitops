@@ -22,9 +22,9 @@
 - "name": "Test Group"
   opsgenie_config:
 # The API key to use when talking to the OpsGenie API.
-    api_key: <secret>
+#    api_key: <secret>
 # The host to send OpsGenie API requests to.
-    api_url: <string>
+#    api_url: <string>
 
 "route":
   "group_by":
