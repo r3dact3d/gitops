@@ -68,3 +68,11 @@ data:
       - key: infra
         value: reserved
         effect: NoSchedule
+        
+    thanosQuerier:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: infra
+        value: reserved
+        effect: NoSchedule
