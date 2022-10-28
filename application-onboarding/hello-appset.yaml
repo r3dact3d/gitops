@@ -13,6 +13,7 @@ spec:
       values:
         revision: HEAD
         env: dev
+        namespace: true
   - clusters:
       selector:
         matchLabels:
@@ -21,6 +22,7 @@ spec:
       values:
         revision: stable
         env: prod
+        namespace: false
   template:
     metadata:
       name: 'hello-{{name}}'
@@ -37,7 +39,7 @@ spec:
           allowEmpty: true
         syncOptions:
           - ApplyOutOfSyncOnly=true
-          - CreateNamespace=true
+          - CreateNamespace={{values.namespace}}
       destination:
         server: https://kubernetes.default.svc
         namespace: 'hello-houston-{{name}}'
