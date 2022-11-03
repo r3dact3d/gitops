@@ -10,7 +10,7 @@ spec:
       - cluster: in-cluster
         url: https://kubernetes.default.svc
         values:
-          overlay: sandbox
+          overlay: hub
           namespace: true
   template:
     metadata:
@@ -18,7 +18,7 @@ spec:
     spec:
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
-        targetRevision: '{{values.revision}}'
+        targetRevision: head
         path: 'appsets/applications/overlay/{{values.overlay}}'
       project: default
       syncPolicy:
