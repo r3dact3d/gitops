@@ -29,5 +29,5 @@ spec:
           - ApplyOutOfSyncOnly=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'openshift-gitops'
+        namespace: openshift-gitops
         
