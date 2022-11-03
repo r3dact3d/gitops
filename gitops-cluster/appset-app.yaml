@@ -11,7 +11,6 @@ spec:
         url: https://kubernetes.default.svc
         values:
           overlay: hub
-          namespace: true
   template:
     metadata:
       name: 'appset-{{cluster}}'
@@ -28,7 +27,6 @@ spec:
           allowEmpty: true
         syncOptions:
           - ApplyOutOfSyncOnly=true
-          - 'CreateNamespace={{values.namespace}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: 'openshift-gitops'
