@@ -1,0 +1,35 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appset-app
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: in-cluster
+        url: https://kubernetes.default.svc
+        values:
+          overlay: sandbox
+          namespace: true
+  template:
+    metadata:
+      name: 'appset-{{cluster}}'
+    spec:
+      source:
+        repoURL: 'https://github.com/r3dact3d/gitops'
+        targetRevision: '{{values.revision}}'
+        path: 'appsets/applications/overlay/{{values.overlay}}'
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
+        syncOptions:
+          - ApplyOutOfSyncOnly=true
+          - CreateNamespace={{values.namespace}}
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'openshift-gitops'
+        

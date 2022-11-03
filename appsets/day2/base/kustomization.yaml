@@ -1,0 +1,5 @@
+resources:
+  - ingress-op-appset.yaml
+  - monitoring-appset.yaml
+  - openshift-config-appset.yaml
+  - openshift-registry-appset.yaml
