@@ -10,7 +10,7 @@ spec:
       - cluster: dev
         url: https://kubernetes.default.svc
         values:
-          revision: head 
+          revision: HEAD 
       - cluster: test
         url: https://kubernetes.default.svc
         values:
