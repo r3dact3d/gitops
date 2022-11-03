@@ -21,7 +21,7 @@ spec:
           revision: stable
   template:
     metadata:
-      name: 'hello-{{name}}'
+      name: 'hello-{{cluster}}'
     spec:
       source:
         repoURL: 'https://github.com/r3dact3d/animated-bassoon'
@@ -38,4 +38,4 @@ spec:
           - CreateNamespace=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'hello-houston-{{name}}'
+        namespace: 'hello-houston-{{cluster}}'
