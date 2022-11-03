@@ -18,7 +18,7 @@ spec:
     spec:
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
-        targetRevision: head
+        targetRevision: HEAD 
         path: 'appsets/applications/overlay/{{values.overlay}}'
       project: default
       syncPolicy:
