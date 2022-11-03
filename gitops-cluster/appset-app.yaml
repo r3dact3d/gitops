@@ -28,7 +28,7 @@ spec:
           allowEmpty: true
         syncOptions:
           - ApplyOutOfSyncOnly=true
-          - CreateNamespace={{values.namespace}}
+          - 'CreateNamespace={{values.namespace}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: 'openshift-gitops'
