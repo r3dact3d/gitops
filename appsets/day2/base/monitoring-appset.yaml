@@ -19,7 +19,7 @@ spec:
         server: '{{url}}'
       project: default
       source:
-        path: common-base/openshift-monitoring
+        path: manifests-cluster/openshift-monitoring
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
       syncPolicy:

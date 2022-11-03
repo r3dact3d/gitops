@@ -21,7 +21,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
-        path: common-base/openshift-ingress-operator
+        path: manifests-cluster/openshift-ingress-operator
         targetRevision: HEAD
       syncPolicy:
         automated:

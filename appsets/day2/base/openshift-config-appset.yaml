@@ -16,7 +16,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
-        path: common-base/openshift-config
+        path: manifests-cluster/openshift-config
         targetRevision: HEAD
       destination:
         namespace: openshift-config
