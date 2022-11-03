@@ -22,6 +22,9 @@ spec:
         namespace: openshift-config
         server: '{{url}}'
       syncPolicy:
-
+        automated:
+          selfHeal: true
+          allowEmpty: true
         syncOptions:
+          - ApplyOutOfSyncOnly=true
           - CreateNamespace=true
