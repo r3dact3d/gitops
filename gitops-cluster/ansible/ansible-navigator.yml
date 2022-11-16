@@ -4,3 +4,5 @@ ansible-navigator:
     image: ee-supported-rhel8:latest
     pull:
       policy: missing
+  playbook-artifact:
+    enable: no
