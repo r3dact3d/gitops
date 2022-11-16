@@ -1,0 +1,6 @@
+---
+ansible-navigator:
+  execution-environment:
+    image: ee-supported-rhel8:latest
+    pull:
+      policy: missing
