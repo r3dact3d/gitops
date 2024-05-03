@@ -3,3 +3,5 @@ resources:
   - monitoring-appset.yaml
   - openshift-config-appset.yaml
   - openshift-registry-appset.yaml
+  - ansible-automation-platform.yaml
+  
