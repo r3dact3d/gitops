@@ -1,3 +1,4 @@
 resources:
   - operator-group.yaml
   - subscription.yaml
+  - automation-controller.yaml
