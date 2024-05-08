@@ -3,6 +3,8 @@ kind: AutomationController
 metadata:
   name: controller-one
   namespace: aap
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   extra_settings:
     - setting: AWX_CONTROL_NODE_TASK_IMPACT

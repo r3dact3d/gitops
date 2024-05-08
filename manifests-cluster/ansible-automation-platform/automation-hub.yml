@@ -3,6 +3,8 @@ kind: AutomationHub
 metadata:
   name: hub-one
   namespace: aap
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   nginx_proxy_send_timeout: 120s
   gunicorn_content_workers: 2
