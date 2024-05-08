@@ -1,7 +1,7 @@
 apiVersion: automationhub.ansible.com/v1beta1
 kind: AutomationHub
 metadata:
-  name: ExampleAutomationHub
+  name: example-automation-hub
   namespace: aap
 spec:
   nginx_proxy_send_timeout: 120s
