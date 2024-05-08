@@ -78,3 +78,15 @@ spec:
         memory: 3Gi
   storage_type: S3
   object_storage_s3_secret: s3-secret
+  node_selector:
+    node-role.kubernetes.io/infra: ""
+  tolerations:
+    - key: infra
+      value: reserved
+      effect: NoSchedule
+  postgres_selector:
+    node-role.kubernetes.io/infra: ""
+  postgres_tolerations:
+    - key: infra
+      value: reserved
+      effect: NoSchedule
