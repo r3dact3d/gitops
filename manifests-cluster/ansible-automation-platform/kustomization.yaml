@@ -2,3 +2,4 @@ resources:
   - operator-group.yaml
   - subscription.yaml
   - automation-controller.yaml
+  - automation-hub.yml
