@@ -3,6 +3,16 @@ kind: AnsibleAutomationPlatform
 metadata:
   name: platform-one
 spec:
+  database:
+    resource_requirements:
+      requests:
+        cpu: 200m
+        memory: 512Mi
+    storage_requirements:
+      requests:
+        storage: 100Gi
+
+        
   # Development purposes only
   no_log: false
 
