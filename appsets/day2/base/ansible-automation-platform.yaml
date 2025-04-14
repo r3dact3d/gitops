@@ -25,4 +25,8 @@ spec:
       syncPolicy:
         #applicationsSync: create-update
         automated:
+          prune: true
           selfHeal: false
+        syncOptions:
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=true
