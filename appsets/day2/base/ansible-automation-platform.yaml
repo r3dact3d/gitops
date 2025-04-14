@@ -25,4 +25,4 @@ spec:
       syncPolicy:
         #applicationsSync: create-update
         automated:
-          selfHeal: true
+          selfHeal: false
