@@ -27,7 +27,7 @@ spec:
     # storage_type: azure
     # object_storage_azure_secret: azure-secret-name
 
-  # lightspeed:
+  lightspeed:
     disabled: true
 
 # End state:
