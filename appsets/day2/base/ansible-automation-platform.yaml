@@ -23,6 +23,6 @@ spec:
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
       syncPolicy:
-        applicationsSync: create-update
+        #applicationsSync: create-update
         automated:
           selfHeal: true
