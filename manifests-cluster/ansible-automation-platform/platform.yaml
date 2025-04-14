@@ -3,25 +3,28 @@ kind: AnsibleAutomationPlatform
 metadata:
   name: platform-one
 spec:
-  database:
-    resource_requirements:
-      requests:
-        cpu: 200m
-        memory: 512Mi
-    storage_requirements:
-      requests:
-        storage: 100Gi
-
-        
+  ## Platform
+  image_pull_policy: IfNotPresent
   # Development purposes only
   no_log: false
-
-  # Platform
   ## uncomment to test bundle certs
   # bundle_cacert_secret: gateway-custom-certs
 
-  # Components
+  ####################
+  ## Extra Settings ##
+  ####################
+#  extra_settings:
+#    - setting: CSRF_TRUSTED_ORIGINS
+#      value:
+#        - https://my-aap-domain.com
 
+  ################
+  ## Components ##
+  ################
+  controller:
+    disable: false
+  eda:
+    disable: false
   hub:
     disabled: false
     ## uncomment if using file storage for Content pod
@@ -36,11 +39,12 @@ spec:
     ## uncomment if using Azure storage for Content pod
     # storage_type: azure
     # object_storage_azure_secret: azure-secret-name
-
   lightspeed:
     disabled: true
 
+
 # End state:
-# * Automation controller deployed and named: myaap-controller
-# * * Event-Driven Ansible deployed and named: myaap-eda
-# * * Automation hub deployed and named: myaap-hub
+# * Automation controller deployed and named: platform-one-controller
+# * * Event-Driven Ansible deployed and named: platform-one-eda
+# * * Automation hub deployed and named: platform-one-hub
+

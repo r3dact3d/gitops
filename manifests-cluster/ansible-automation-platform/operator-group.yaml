@@ -1,8 +1,8 @@
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
-  name: aap
-  namespace: aap
+  name: ansible-automation-platform-operator
+  namespace: ansible-automation-platform
 spec:
   targetNamespaces:
-  - aap
+    - ansible-automation-platform
