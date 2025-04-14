@@ -18,17 +18,17 @@ spec:
     #storage_type: file
     #file_storage_storage_class: nfs-local-rwx
     #file_storage_size: 10Gi
-
+    ## Trick this file
     ## uncomment if using S3 storage for Content pod
-      storage_type: S3
-      object_storage_s3_secret: s3-secret
+    storage_type: S3
+    object_storage_s3_secret: s3-secret
 
     ## uncomment if using Azure storage for Content pod
     # storage_type: azure
     # object_storage_azure_secret: azure-secret-name
 
   # lightspeed:
-  #   disabled: true
+    disabled: true
 
 # End state:
 # * Automation controller deployed and named: myaap-controller
