@@ -29,14 +29,6 @@ data:
         value: reserved
         effect: NoSchedule
 
-#    grafana:
-#      nodeSelector:
-#        node-role.kubernetes.io/infra: ""
-#      tolerations:
-#      - key: infra
-#        value: reserved
-#        effect: NoSchedule
-
     k8sPrometheusAdapter:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
