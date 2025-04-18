@@ -1,12 +1,12 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: system:openshift:scc:nested-podman-scc
+  name: nested-podman-clusterrole
 rules:
 - apiGroups:
   - security.openshift.io
   resourceNames:
-  - nested-podman-scc
+  - nested-podman
   resources:
   - securitycontextconstraints
   verbs:
