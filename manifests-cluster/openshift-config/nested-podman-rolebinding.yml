@@ -9,5 +9,5 @@ roleRef:
   name: nested-podman-clusterrole
 subjects:
 - kind: ServiceAccount
-  name: default
+  name: automation-job-podman
   namespace: aap
