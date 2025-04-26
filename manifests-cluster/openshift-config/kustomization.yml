@@ -1,0 +1,6 @@
+resources:
+  - enable-feature-gate.yml
+  - enable-crun-worker.yml
+  - nested-podman-scc.yml
+  - nested-podman-clusterrole.yml
+  - nested-podman-rolebinding.yml
