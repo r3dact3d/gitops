@@ -6,7 +6,7 @@ rules:
 - apiGroups:
   - security.openshift.io
   resourceNames:
-  - nested-podman
+  - nested-podman-scc
   resources:
   - securitycontextconstraints
   verbs:
