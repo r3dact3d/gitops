@@ -1,5 +1,5 @@
 resources:
-  #- enable-feature-gate.yml
+  - enable-feature-gate.yml
   - enable-crun-worker.yml
   - nested-podman-scc.yml
   - nested-podman-clusterrole.yml
