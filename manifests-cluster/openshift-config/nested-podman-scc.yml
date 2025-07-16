@@ -4,6 +4,7 @@ metadata:
   name: nested-podman-scc
 priority: null
 allowPrivilegeEscalation: true
+userNamespaceLevel: RequirePodLevel
 allowedCapabilities:
 - SETUID
 - SETGID
