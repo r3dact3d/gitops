@@ -21,7 +21,7 @@ spec:
         server: '{{server}}'
       project: default
       source:
-        path: 'common-base/openshift-file-integrity'
+        path: 'manifests-cluster/openshift-file-integrity'
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
       syncPolicy:

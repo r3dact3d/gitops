@@ -21,7 +21,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
-        path: common-base/openshift-compliance
+        path: manifests-cluster/openshift-compliance
         targetRevision: HEAD
       syncPolicy:
         automated:

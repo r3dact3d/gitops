@@ -25,7 +25,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/r3dact3d/gitops'
-        path: 'common-base/cost-management/overlays/{{values.env}}'
+        path: 'manifests-cluster/cost-management/overlays/{{values.env}}'
         targetRevision: HEAD
       syncPolicy:
         automated:

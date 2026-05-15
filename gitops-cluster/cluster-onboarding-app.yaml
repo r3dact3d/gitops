@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: cluster-onboarding
+    path: appsets/operators
     repoURL: https://github.com/r3dact3d/gitops
     targetRevision: HEAD
     directory:

@@ -21,7 +21,7 @@ spec:
         server: '{{server}}'
       project: default
       source:
-        path: 'common-base/openshift-logging'
+        path: 'manifests-cluster/openshift-logging'
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
       syncPolicy:

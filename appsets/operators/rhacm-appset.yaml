@@ -22,7 +22,7 @@ spec:
         server: '{{server}}'
       project: default
       source:
-        path: common-base/open-cluster-management
+        path: manifests-cluster/open-cluster-management
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
       syncPolicy:

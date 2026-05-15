@@ -1,6 +1,6 @@
 = GitOps for OpenShift4 
 
-Latest test on 4.10.18
+Last documented validation: OpenShift 4.10.18 (update this after the next verified test cycle)
 
 NOTE: You can see an example workflow that uses this repo for GitOps link:https://github.com/r3dact3d/OCP4-Deploy/blob/main/.github/workflows/gitops.yaml[r3dact3d/OCP4-Deploy]
 
@@ -20,22 +20,26 @@ NOTE: You can see an example workflow that uses this repo for GitOps link:https:
 ----
 GitOps/
 ├─ gitops-cluster/
-├─ cluster-onboarding/
-├─ common-base/
-│  ├─ openshift-config
-│  ├─ openshift-monitoring
-│  ├─ openshift-ingress-operator
-│  ├─ openshift-compliance
-│  ├─ cert-manager
-├─ application-onboarding/
+│  ├─ gitops-operator.yaml
+│  ├─ gitopsservice.yaml
+│  ├─ appset-app.yaml
+│  ├─ day2-app.yaml
+├─ appsets/
+│  ├─ applications/
+│  ├─ day2/
+│  ├─ operators/
+├─ manifests-cluster/
+│  ├─ openshift-config/
+│  ├─ openshift-monitoring/
+│  ├─ openshift-ingress-operator/
+│  ├─ openshift-compliance/
+│  ├─ cert-manager/
 ├─ README.adoc
 ----
 
 == GitOps WorkFlow
 
-
-image::docs/gitops-workflow.png[GitOps Workflow]
-
+Bootstrap the hub cluster from resources in `gitops-cluster`, then let Argo CD sync application and operator definitions from `appsets` and cluster manifests from `manifests-cluster`.
 
 == Hub Cluster
 
@@ -63,31 +67,29 @@ image::docs/rhacm-diagram.png[RHACM Diagram]
 
 Leverage the link:https://argocd-applicationset.readthedocs.io/en/stable/Generators-Cluster/[Cluster] Generator to onboard managed clusters by storing parameters in link:https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters[secrets] 
 
-. Create ArgoCD link:https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml[application] to keep kubernetes resources synced that are required for the Cluster generator 
+. Create ArgoCD link:gitops-cluster/appset-app.yaml[ApplicationSet] to keep application sets synced on the hub cluster 
 
 ----
 oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml
 ----
 
 [start=2]
-. link:https://github.com/r3dact3d/gitops/tree/main/cluster-onboarding[Onboard] new cluster by adding kubernetes secret to this repo 
+. Configure cluster labels/selectors expected by ApplicationSets under link:appsets/operators/[appsets/operators] and link:appsets/day2/[appsets/day2]
 
 
 
 
 == Application Onboarding
 
-link:https://github.com/r3dact3d/gitops/tree/main/application-onboarding[Applicationsets] with cluster generator are used to manage the ArgoCD applications. The strategy here is to apply all applicationsets to hub cluster for the applicationset controller to monitor.
+link:appsets/applications/[ApplicationSets] with cluster generator are used to manage ArgoCD applications. The strategy here is to apply all application sets to the hub cluster for the ApplicationSet controller to monitor.
 
 In fact we can treat a git repo with applicationsets as an argoCD application as well.
     
 ----
-oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/application-onboarding-app.yaml
+oc create -f gitops-cluster/day2-app.yaml
 ----
 
-link:https://github.com/r3dact3d/gitops/tree/main/common-base[Cluster config] manifests logically grouped
-
-image::docs/cluster-generator-diagram.png[Cluster Generator Diagram]
+link:manifests-cluster/[Cluster config] manifests logically grouped
 
 
 == Labels

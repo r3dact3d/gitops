@@ -23,7 +23,7 @@ spec:
         server: '{{server}}'
       project: default
       source:
-        path: 'common-base/cert-manager/overlays/{{values.env}}'
+        path: 'manifests-cluster/cert-manager/overlays/{{values.env}}'
         repoURL: https://github.com/r3dact3d/gitops
         targetRevision: HEAD
       syncPolicy:
